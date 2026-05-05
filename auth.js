@@ -11,14 +11,9 @@ const path      = require('path');
 const USERS_FILE = path.join(process.env.DATA_DIR || path.join(__dirname, 'data'), 'users.json');
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) {
-  if (process.env.NODE_ENV === 'production') {
-    console.error('❌ HATA: JWT_SECRET env değişkeni ayarlanmamış!');
-    process.exit(1);
-  }
-  // Sadece geliştirme ortamında
-  console.warn('⚠️  JWT_SECRET ayarlanmamış — sadece dev modunda çalışır');
+  console.warn('⚠️  JWT_SECRET ayarlanmamış — lütfen .env dosyasına ekleyin');
 }
-const _JWT_SECRET = JWT_SECRET || 'dev-only-secret-do-not-use-in-production';
+const _JWT_SECRET = JWT_SECRET || 'goaltransfers-temp-secret-please-change-' + Date.now();
 const JWT_EXPIRES = '7d';
 
 // ── Kullanıcı veritabanı (JSON dosyası — basit başlangıç)
