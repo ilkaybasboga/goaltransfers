@@ -1,0 +1,3 @@
+# ads.txt — Google AdSense için
+# Google AdSense hesabı açtıktan sonra aşağıdaki satırı publisher ID'nle güncelle:
+# google.com, pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

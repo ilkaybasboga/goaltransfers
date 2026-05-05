@@ -1,0 +1,3797 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoalTransfer — Spor Forumu</title>
+<!-- ═══ SEO CORE META ═══ -->
+<meta name="description" content="Son dakika transfer haberleri, canlı spor gündemleri ve forum tartışmaları. Futbol, basketbol ve daha fazlası — AI destekli GoalTransfer'da.">
+<meta name="keywords" content="transfer haberleri, futbol haberleri, spor forumu, son dakika transfer, futbol transfer, süper lig, şampiyonlar ligi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="GoalTransfer">
+<meta name="theme-color" content="#080c10">
+<link rel="canonical" href="https://goaltransfers.com/">
+
+<!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GoalTransfer">
+<meta property="og:title" content="GoalTransfer — Son Dakika Transfer & Spor Haberleri">
+<meta property="og:description" content="AI destekli spor forumu. Son dakika transfer haberleri, gündem tartışmaları ve daha fazlası.">
+<meta property="og:url" content="https://goaltransfers.com/">
+<meta property="og:image" content="https://goaltransfers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+
+<!-- ═══ TWITTER / X CARDS ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@GoalTransferFC">
+<meta name="twitter:title" content="GoalTransfer — Transfer & Spor Haberleri">
+<meta name="twitter:description" content="Son dakika transfer haberleri ve spor forumu. AI destekli.">
+<meta name="twitter:image" content="https://goaltransfers.com/og-image.png">
+
+<!-- ═══ HREFLANG (Çok Dil SEO) ═══ -->
+<link rel="alternate" hreflang="tr" href="https://goaltransfers.com/?lang=tr">
+<link rel="alternate" hreflang="en" href="https://goaltransfers.com/?lang=en">
+<link rel="alternate" hreflang="es" href="https://goaltransfers.com/?lang=es">
+<link rel="alternate" hreflang="ar" href="https://goaltransfers.com/?lang=ar">
+<link rel="alternate" hreflang="zh" href="https://goaltransfers.com/?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://goaltransfers.com/">
+
+<!-- ═══ JSON-LD STRUCTURED DATA ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://goaltransfers.com/#website",
+      "url": "https://goaltransfers.com/",
+      "name": "GoalTransfer",
+      "description": "AI destekli spor forumu ve transfer haberleri",
+      "inLanguage": ["tr","en","es","ar","zh"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://goaltransfers.com/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://goaltransfers.com/#org",
+      "name": "GoalTransfer",
+      "url": "https://goaltransfers.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://goaltransfers.com/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/GoalTransferForum"
+      ]
+    },
+    {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://goaltransfers.com/#news",
+      "name": "GoalTransfer",
+      "url": "https://goaltransfers.com/",
+      "masthead": "https://goaltransfers.com/",
+      "foundingDate": "2025",
+      "publishingPrinciples": "https://goaltransfers.com/about"
+    }
+  ]
+}
+</script>
+
+<!-- ═══ PWA & PERFORMANCE ═══ -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GoalTransfer">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Preload kritik fontlar -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//api.anthropic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#080c10; --surface:#0d1117; --surface2:#141922; --surface3:#1a2232;
+  --accent:#00d4ff; --accent2:#ff3d00; --accent3:#f5c518;
+  --text:#e8edf3; --text2:#8a9bb0; --text3:#4a5568;
+  --border:#1e2d42; --transfer:#00ff9d;
+  --transition: background .25s, border-color .25s, color .25s;
+}
+/* ── AÇIK TEMA ── */
+[data-theme="light"] {
+  --bg:#f0f2f5; --surface:#ffffff; --surface2:#f8f9fb; --surface3:#eef0f4;
+  --accent:#0099cc; --accent2:#e03000; --accent3:#c49a00;
+  --text:#111827; --text2:#374151; --text3:#9ca3af;
+  --border:#d1d5db; --transfer:#00995e;
+}
+[data-theme="light"] body::before { background-image:
+  linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
+}
+.theme-toggle {
+  background:transparent; border:1px solid var(--border);
+  color:var(--text2); width:32px; height:32px; border-radius:6px;
+  font-size:.9rem; cursor:pointer; transition:all .2s;
+  display:flex; align-items:center; justify-content:center;
+}
+.theme-toggle:hover { border-color:rgba(0,212,255,.35); color:var(--accent); }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;
+  background-image:linear-gradient(rgba(0,212,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.025) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;z-index:0;}
+
+/* ── NAV ── */
+nav{background:rgba(8,12,16,.97);border-bottom:1px solid var(--border);
+  padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:3px;
+  color:var(--accent);text-shadow:0 0 30px rgba(0,212,255,.4);cursor:pointer;}
+.logo span{color:var(--accent2);}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;
+  padding:.35rem .9rem;border-radius:4px;transition:all .2s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);background:rgba(0,212,255,.07);}
+.nav-right{display:flex;align-items:center;gap:.75rem;}
+.btn-sm{padding:.35rem 1rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.btn-primary{background:var(--transfer);border:none;color:#000;}
+.btn-primary:hover{box-shadow:0 0 20px rgba(0,255,157,.35);transform:translateY(-1px);}
+
+/* ── TICKER ── */
+.ticker-wrap{background:linear-gradient(90deg,var(--accent2),#ff6b35);padding:.45rem 0;overflow:hidden;}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 40s linear infinite;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.t-label{background:rgba(0,0,0,.3);color:#fff;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.72rem;letter-spacing:2px;padding:.1rem .75rem;margin-right:2rem;}
+.t-item{color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.88rem;
+  font-weight:600;margin-right:2.5rem;display:flex;align-items:center;gap:.4rem;}
+.t-dot{width:5px;height:5px;background:#fff;border-radius:50%;opacity:.6;}
+
+/* ── PAGES ── */
+.page{display:none;position:relative;z-index:1;}
+.page.active{display:block;}
+
+/* ── HERO TRANSFER ── */
+.hero{background:linear-gradient(135deg,#0a1a0a,#0a1520,#0d1117);
+  border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem;overflow:hidden;position:relative;}
+.hero::before{content:'TRANSFER';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);
+  font-family:'Bebas Neue',sans-serif;font-size:11rem;color:rgba(0,255,157,.035);
+  letter-spacing:8px;pointer-events:none;}
+.hero-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+.featured-card{grid-column:1/3;background:var(--surface2);border:1px solid rgba(0,255,157,.15);
+  border-radius:8px;padding:1.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.featured-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--transfer);}
+.featured-card:hover{border-color:rgba(0,255,157,.35);box-shadow:0 0 40px rgba(0,255,157,.1);transform:translateY(-2px);}
+.breaking-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,255,157,.1);
+  border:1px solid rgba(0,255,157,.25);color:var(--transfer);font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.68rem;letter-spacing:2px;padding:.2rem .6rem;border-radius:3px;margin-bottom:.75rem;}
+.pulse{width:6px;height:6px;background:var(--transfer);border-radius:50%;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.featured-card h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;
+  color:var(--text);line-height:1.15;margin-bottom:.75rem;}
+.featured-card h2 .hl{color:var(--transfer);}
+.transfer-meta{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;}
+.club-tag{display:flex;align-items:center;gap:.35rem;background:var(--surface3);
+  padding:.25rem .7rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:.82rem;color:var(--text2);}
+.fee-pill{background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.2);
+  color:var(--accent3);font-family:'Bebas Neue',sans-serif;font-size:1rem;
+  letter-spacing:1px;padding:.2rem .7rem;border-radius:4px;}
+.t-time{color:var(--text3);font-size:.78rem;margin-left:auto;}
+.side-mini{display:flex;flex-direction:column;gap:.65rem;}
+.mini-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+  padding:.9rem 1.1rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.mini-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--transfer);opacity:.45;}
+.mini-card:hover{border-color:rgba(0,255,157,.25);background:var(--surface3);}
+.mini-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:.25rem;}
+.mini-card .mc{font-size:.78rem;color:var(--text2);}
+
+/* ── STATS BAR ── */
+.stats-bar{max-width:1400px;margin:.75rem auto 0;padding:0 2rem;}
+.stats-inner{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:.9rem 1.5rem;display:flex;align-items:center;gap:2rem;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--transfer);letter-spacing:1px;line-height:1;}
+.stat-lbl{font-size:.68rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase;}
+.stat-div{width:1px;height:28px;background:var(--border);}
+.refresh-btn{margin-left:auto;background:transparent;border:1px solid var(--border);
+  color:var(--text3);padding:.3rem .9rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.refresh-btn:hover{border-color:var(--accent);color:var(--accent);}
+.status-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:.35rem;}
+.status-online{background:var(--transfer);animation:pulse 2s infinite;}
+.status-offline{background:var(--accent2);}
+
+/* ── MAIN ── */
+.main{max-width:1400px;margin:0 auto;padding:2rem;display:grid;grid-template-columns:1fr 320px;gap:2rem;}
+
+/* ── SECTION HEADER ── */
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:3px;
+  color:var(--text);display:flex;align-items:center;gap:.65rem;}
+.sec-line{width:3px;border-radius:2px;}
+.see-all{color:var(--accent);text-decoration:none;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;
+  padding:.25rem .75rem;border:1px solid rgba(0,212,255,.2);border-radius:4px;
+  cursor:pointer;transition:all .2s;}
+.see-all:hover{background:rgba(0,212,255,.07);}
+
+/* ── FILTER TABS ── */
+.filter-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.25rem;}
+.ftab{background:transparent;border:1px solid var(--border);color:var(--text2);
+  padding:.3rem .85rem;border-radius:4px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.ftab:hover,.ftab.active{background:rgba(0,255,157,.07);border-color:rgba(0,255,157,.3);color:var(--transfer);}
+
+/* ── TRANSFER CARDS ── */
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;}
+.t-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:1.25rem;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.t-card:hover{border-color:rgba(0,255,157,.2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.4);}
+.tc-bar{position:absolute;top:0;left:0;width:100%;height:3px;}
+.bar-transfer{background:linear-gradient(90deg,var(--transfer),#00cc7a);}
+.bar-match{background:linear-gradient(90deg,var(--accent),#0099ff);}
+.bar-injury{background:linear-gradient(90deg,var(--accent2),#ff6b35);}
+.bar-general{background:linear-gradient(90deg,var(--accent3),#e0a800);}
+.tc-badges{display:flex;gap:.35rem;flex-wrap:wrap;margin:.3rem 0 .65rem;}
+.badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.62rem;
+  letter-spacing:1.5px;text-transform:uppercase;padding:.15rem .5rem;border-radius:3px;}
+.b-transfer{background:rgba(0,255,157,.1);color:var(--transfer);border:1px solid rgba(0,255,157,.2);}
+.b-match{background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.2);}
+.b-injury{background:rgba(255,61,0,.1);color:var(--accent2);border:1px solid rgba(255,61,0,.2);}
+.b-general{background:rgba(245,197,24,.1);color:var(--accent3);border:1px solid rgba(245,197,24,.2);}
+.b-high{background:rgba(255,61,0,.08);color:#ff6b35;border:1px solid rgba(255,61,0,.15);}
+.b-medium{background:rgba(245,197,24,.08);color:var(--accent3);border:1px solid rgba(245,197,24,.15);}
+.b-low{background:rgba(100,100,100,.1);color:var(--text3);border:1px solid var(--border);}
+.b-confirmed{background:rgba(0,255,157,.1);color:var(--transfer);border:1px solid rgba(0,255,157,.2);}
+.b-rumor{background:rgba(245,197,24,.1);color:var(--accent3);border:1px solid rgba(245,197,24,.2);}
+.tc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;
+  color:var(--text);line-height:1.3;margin-bottom:.55rem;}
+.tc-summary{font-size:.82rem;color:var(--text2);line-height:1.55;margin-bottom:.75rem;}
+.tf-flow{display:flex;align-items:center;gap:.4rem;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.82rem;background:rgba(0,255,157,.05);
+  border:1px solid rgba(0,255,157,.12);border-radius:5px;padding:.35rem .7rem;
+  width:fit-content;margin-bottom:.65rem;}
+.tf-from{color:var(--text2)}.tf-arr{color:var(--transfer)}.tf-to{color:var(--transfer)}.tf-fee{color:var(--accent3);margin-left:.35rem;}
+.tc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--border);}
+.tc-src{font-size:.72rem;color:var(--text3);}
+.tc-stats{display:flex;align-items:center;gap:.75rem;font-size:.72rem;color:var(--text3);}
+
+/* ── FORUM SECTION ── */
+.forum-sec{margin-bottom:2.5rem;}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem;}
+.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:1.1rem 1rem;text-align:center;cursor:pointer;transition:all .2s;}
+.cat-card:hover{border-color:rgba(0,212,255,.25);background:var(--surface2);}
+.cat-icon{font-size:1.7rem;margin-bottom:.4rem;display:block;}
+.cat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;color:var(--text);display:block;margin-bottom:.2rem;}
+.cat-cnt{font-size:.72rem;color:var(--text3);}
+.thread-list{display:flex;flex-direction:column;gap:.45rem;}
+.thread{background:var(--surface);border:1px solid var(--border);border-radius:6px;
+  padding:.9rem 1.2rem;display:grid;grid-template-columns:1fr auto;gap:1rem;
+  align-items:center;cursor:pointer;transition:all .2s;}
+.thread:hover{border-color:rgba(0,212,255,.2);background:var(--surface2);}
+.th-left{display:flex;align-items:flex-start;gap:.65rem;}
+.th-dot{width:7px;height:7px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.th-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.97rem;
+  color:var(--text);margin-bottom:.22rem;line-height:1.3;}
+.th-meta{font-size:.72rem;color:var(--text3);display:flex;align-items:center;gap:.45rem;}
+.th-meta .auth{color:var(--text2);}
+.hot-tag{background:rgba(255,61,0,.12);color:var(--accent2);font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.62rem;letter-spacing:1.5px;padding:.1rem .4rem;border-radius:3px;}
+.th-stats{text-align:right;flex-shrink:0;}
+.th-rep{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--accent);letter-spacing:1px;line-height:1;}
+.th-rlab{font-size:.62rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase;}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:1.25rem;}
+.widget{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.w-hdr{padding:.85rem 1.25rem;border-bottom:1px solid var(--border);background:var(--surface2);
+  font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--text);
+  display:flex;align-items:center;gap:.5rem;}
+.w-dot{width:7px;height:7px;border-radius:50%;}
+.rumor-list{padding:.65rem;display:flex;flex-direction:column;gap:.45rem;}
+.rumor-item{background:var(--surface2);border:1px solid var(--border);border-radius:5px;
+  padding:.8rem .9rem;cursor:pointer;transition:all .2s;}
+.rumor-item:hover{border-color:rgba(0,255,157,.2);}
+.r-player{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:.2rem;}
+.r-clubs{font-size:.76rem;color:var(--text2);display:flex;align-items:center;gap:.3rem;}
+.r-bar-wrap{margin-top:.45rem;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.r-bar{height:100%;border-radius:2px;}
+.news-list-w{padding:.5rem;display:flex;flex-direction:column;}
+.news-item-w{padding:.8rem .75rem;border-bottom:1px solid var(--border);cursor:pointer;transition:all .2s;border-radius:4px;}
+.news-item-w:last-child{border-bottom:none;}
+.news-item-w:hover{background:rgba(255,255,255,.02);}
+.ni-sport{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.62rem;
+  letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem;}
+.ni-title{font-size:.84rem;color:var(--text);line-height:1.4;margin-bottom:.25rem;}
+.ni-time{font-size:.7rem;color:var(--text3);}
+.online-w{padding:1rem 1.25rem;}
+.os{display:flex;align-items:center;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--border);font-size:.83rem;}
+.os:last-child{border-bottom:none;}
+.os .l{color:var(--text2);}
+.os .v{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--accent);letter-spacing:1px;}
+
+/* ── LOADING / EMPTY ── */
+.loading-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.skeleton{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:1.25rem;height:180px;animation:shimmer 1.5s infinite;}
+@keyframes shimmer{0%,100%{opacity:.5}50%{opacity:1}}
+.empty-state{padding:3rem;text-align:center;color:var(--text3);}
+.empty-icon{font-size:3rem;margin-bottom:1rem;display:block;}
+.empty-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text2);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeInUp .35s ease both;}
+
+/* ── API STATUS ── */
+.api-status{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--surface2);
+  border:1px solid var(--border);border-radius:6px;padding:.5rem 1rem;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.75rem;
+  letter-spacing:1px;display:flex;align-items:center;gap:.5rem;z-index:200;}
+
+footer{background:var(--surface);border-top:1px solid var(--border);padding:1.25rem 2rem;
+  text-align:center;font-size:.76rem;color:var(--text3);position:relative;z-index:1;margin-top:3rem;}
+footer span{color:var(--accent);}
+
+/* ── YORUM SİSTEMİ ── */
+.comment-section{margin-top:0;}
+.comment-form{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1.5rem;padding:1.25rem;
+  background:var(--surface2);border:1px solid var(--border);border-radius:8px;}
+.comment-av{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);flex-shrink:0;object-fit:cover;}
+.comment-input-wrap{flex:1;}
+.comment-textarea{width:100%;background:var(--surface3);border:1px solid var(--border);
+  border-radius:6px;color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;
+  padding:.65rem .9rem;resize:none;outline:none;transition:border-color .2s;min-height:80px;}
+.comment-textarea:focus{border-color:rgba(0,212,255,.4);}
+.comment-textarea::placeholder{color:var(--text3);}
+.comment-submit{background:var(--transfer);border:none;color:#000;padding:.4rem 1.1rem;
+  border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:1px;cursor:pointer;transition:all .2s;margin-top:.5rem;}
+.comment-submit:hover{box-shadow:0 0 16px rgba(0,255,157,.3);}
+.comment-list{display:flex;flex-direction:column;gap:.75rem;}
+.comment-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;
+  transition:border-color .2s;}
+.comment-item.reply{margin-left:2.5rem;border-left:3px solid rgba(0,212,255,.2);}
+.comment-item:hover{border-color:rgba(255,255,255,.08);}
+.ci-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;}
+.ci-av{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border);}
+.ci-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;color:var(--text);}
+.ci-time{font-size:.7rem;color:var(--text3);margin-left:auto;}
+.ci-edited{font-size:.65rem;color:var(--text3);font-style:italic;}
+.ci-text{font-size:.85rem;color:var(--text2);line-height:1.6;margin-bottom:.65rem;}
+.ci-actions{display:flex;align-items:center;gap:.5rem;}
+.ci-btn{background:transparent;border:1px solid var(--border);color:var(--text3);
+  font-size:.72rem;padding:.2rem .6rem;border-radius:4px;cursor:pointer;transition:all .2s;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.5px;}
+.ci-btn:hover{border-color:rgba(255,255,255,.2);color:var(--text2);}
+.ci-btn.liked{color:var(--accent2);border-color:rgba(255,61,0,.3);}
+.ci-btn.danger:hover{border-color:rgba(255,61,0,.3);color:var(--accent2);}
+
+/* ── BİLDİRİM PANELİ ── */
+.notif-bell{position:relative;cursor:pointer;background:transparent;border:1px solid var(--border);
+  border-radius:6px;padding:.3rem .65rem;color:var(--text2);font-size:1rem;transition:all .2s;}
+.notif-bell:hover{border-color:rgba(0,212,255,.3);color:var(--accent);}
+.notif-badge{position:absolute;top:-5px;right:-5px;background:var(--accent2);color:#fff;
+  font-size:.6rem;font-weight:700;min-width:16px;height:16px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;padding:0 3px;}
+.notif-panel{position:fixed;top:56px;right:1rem;width:340px;max-height:500px;
+  background:var(--surface2);border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;z-index:300;box-shadow:0 20px 60px rgba(0,0,0,.6);
+  opacity:0;pointer-events:none;transform:translateY(-10px);transition:all .2s;}
+.notif-panel.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.notif-hdr{padding:.9rem 1.1rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;}
+.notif-hdr-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--text);}
+.notif-read-all{font-size:.7rem;color:var(--accent);cursor:pointer;letter-spacing:1px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;}
+.notif-scroll{overflow-y:auto;max-height:420px;}
+.notif-item{padding:.85rem 1.1rem;border-bottom:1px solid var(--border);cursor:pointer;
+  transition:background .15s;display:flex;gap:.75rem;align-items:flex-start;}
+.notif-item:hover{background:rgba(255,255,255,.03);}
+.notif-item.unread{background:rgba(0,212,255,.04);}
+.notif-item.unread::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--accent);flex-shrink:0;margin-top:5px;}
+.ni-content{flex:1;}
+.ni-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;
+  color:var(--text);margin-bottom:.2rem;}
+.ni-body{font-size:.78rem;color:var(--text2);line-height:1.4;}
+.ni-time{font-size:.68rem;color:var(--text3);margin-top:.2rem;}
+.notif-empty{padding:2.5rem;text-align:center;color:var(--text3);font-size:.85rem;}
+
+/* ── TOPIC MODAL (Yorum sayfası) ── */
+.topic-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:400;
+  display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;
+  backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .25s;overflow-y:auto;}
+.topic-modal-overlay.open{opacity:1;pointer-events:all;}
+.topic-modal{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  width:100%;max-width:720px;transform:translateY(20px);transition:transform .25s;}
+.topic-modal-overlay.open .topic-modal{transform:translateY(0);}
+.tm-hdr{padding:1.5rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
+.tm-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;
+  color:var(--text);line-height:1.2;flex:1;}
+.tm-close{background:transparent;border:1px solid var(--border);color:var(--text3);
+  padding:.3rem .7rem;border-radius:4px;cursor:pointer;font-size:.9rem;flex-shrink:0;transition:all .2s;}
+.tm-close:hover{border-color:var(--accent2);color:var(--accent2);}
+.tm-body{padding:1.5rem;}
+.tm-news-preview{background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  padding:1rem 1.25rem;margin-bottom:1.5rem;}
+.tm-news-preview p{font-size:.85rem;color:var(--text2);line-height:1.6;}
+
+/* ── ADMİN PANELİ ── */
+.admin-layout{max-width:1200px;margin:0 auto;padding:2rem;display:grid;
+  grid-template-columns:200px 1fr;gap:1.5rem;}
+.admin-sidebar-nav{display:flex;flex-direction:column;gap:.35rem;}
+.admin-nav-item{background:transparent;border:1px solid transparent;color:var(--text2);
+  padding:.6rem 1rem;border-radius:6px;text-align:left;cursor:pointer;transition:all .2s;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.5px;}
+.admin-nav-item:hover,.admin-nav-item.active{background:var(--surface2);border-color:var(--border);color:var(--text);}
+.admin-nav-item.active{border-color:rgba(0,212,255,.25);color:var(--accent);}
+.admin-main{min-height:60vh;}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
+.admin-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
+.admin-stat{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center;}
+.admin-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--transfer);letter-spacing:1px;line-height:1;}
+.admin-stat-lbl{font-size:.72rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:.2rem;}
+.admin-table{width:100%;border-collapse:collapse;}
+.admin-table th{background:var(--surface2);border:1px solid var(--border);padding:.6rem .9rem;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);text-align:left;}
+.admin-table td{border:1px solid var(--border);padding:.65rem .9rem;font-size:.82rem;color:var(--text2);}
+.admin-table tr:hover td{background:rgba(255,255,255,.02);}
+.admin-del-btn{background:rgba(255,61,0,.1);border:1px solid rgba(255,61,0,.2);
+  color:var(--accent2);padding:.25rem .6rem;border-radius:4px;font-size:.72rem;cursor:pointer;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;transition:all .2s;}
+.admin-del-btn:hover{background:rgba(255,61,0,.2);}
+.broadcast-form{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem;}
+.broadcast-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;
+  color:var(--text);margin-bottom:1.25rem;}
+.admin-input{width:100%;background:var(--surface2);border:1px solid var(--border);
+  border-radius:6px;color:var(--text);font-family:'Barlow',sans-serif;font-size:.88rem;
+  padding:.6rem .9rem;outline:none;transition:border-color .2s;margin-bottom:.75rem;}
+.admin-input:focus{border-color:rgba(0,212,255,.4);}
+.admin-btn{background:var(--accent);border:none;color:#000;padding:.55rem 1.5rem;
+  border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.admin-btn:hover{box-shadow:0 0 18px rgba(0,212,255,.3);}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;
+  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);
+  opacity:0;pointer-events:none;transition:opacity .25s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  width:100%;max-width:420px;padding:2rem;position:relative;
+  transform:translateY(20px);transition:transform .25s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-close{position:absolute;top:1rem;right:1rem;background:transparent;border:none;
+  color:var(--text3);font-size:1.2rem;cursor:pointer;transition:color .2s;}
+.modal-close:hover{color:var(--text);}
+.modal h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;
+  color:var(--text);margin-bottom:.35rem;}
+.modal h2 span{color:var(--transfer);}
+.modal-sub{font-size:.82rem;color:var(--text2);margin-bottom:1.5rem;}
+.modal-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:1.5rem;}
+.modal-tab{flex:1;background:transparent;border:none;color:var(--text2);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:1.5px;text-transform:uppercase;padding:.55rem;cursor:pointer;transition:all .2s;}
+.modal-tab.active{background:var(--surface3);color:var(--text);}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);margin-bottom:.4rem;}
+.form-input{width:100%;background:var(--surface2);border:1px solid var(--border);
+  border-radius:6px;color:var(--text);font-family:'Barlow',sans-serif;font-size:.9rem;
+  padding:.65rem .9rem;outline:none;transition:border-color .2s;}
+.form-input:focus{border-color:rgba(0,212,255,.4);}
+.form-input::placeholder{color:var(--text3);}
+.form-error{background:rgba(255,61,0,.08);border:1px solid rgba(255,61,0,.2);
+  color:var(--accent2);font-size:.8rem;padding:.6rem .9rem;border-radius:5px;
+  margin-bottom:1rem;display:none;}
+.form-error.show{display:block;}
+.btn-full{width:100%;padding:.7rem;border-radius:6px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.9rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.btn-google{background:var(--surface2);border:1px solid var(--border);color:var(--text);
+  display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:.75rem;}
+.btn-google:hover{border-color:rgba(255,255,255,.25);background:var(--surface3);}
+.or-div{display:flex;align-items:center;gap:.75rem;margin:.9rem 0;color:var(--text3);font-size:.75rem;}
+.or-div::before,.or-div::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ── USER MENU ── */
+.user-menu-wrap{position:relative;}
+.user-avatar-btn{background:transparent;border:1px solid var(--border);
+  border-radius:6px;padding:.25rem .6rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:all .2s;}
+.user-avatar-btn:hover{border-color:rgba(0,212,255,.3);}
+.u-avatar{width:26px;height:26px;border-radius:50%;object-fit:cover;border:1px solid var(--border);}
+.u-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;
+  color:var(--text);max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.user-dropdown{position:absolute;top:calc(100% + .5rem);right:0;
+  background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  min-width:180px;overflow:hidden;z-index:200;
+  opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .2s;}
+.user-dropdown.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd-item{display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;
+  font-size:.85rem;color:var(--text2);cursor:pointer;transition:background .15s;border:none;
+  background:transparent;width:100%;text-align:left;}
+.dd-item:hover{background:var(--surface3);color:var(--text);}
+.dd-item.danger{color:var(--accent2);}
+.dd-div{height:1px;background:var(--border);margin:.25rem 0;}
+
+/* ── PROFILE PAGE ── */
+.profile-header{background:linear-gradient(135deg,#0a1a0a,#0a1520);
+  border-bottom:1px solid var(--border);padding:3rem 2rem 2rem;}
+.profile-inner{max-width:900px;margin:0 auto;display:flex;align-items:flex-end;gap:2rem;}
+.profile-av{width:90px;height:90px;border-radius:50%;border:3px solid var(--transfer);object-fit:cover;}
+.profile-info h1{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;color:var(--text);}
+.profile-info .p-meta{font-size:.82rem;color:var(--text2);margin-top:.25rem;}
+.profile-info .p-club{color:var(--transfer);font-weight:600;}
+.profile-body{max-width:900px;margin:2rem auto;padding:0 2rem;}
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;}
+.profile-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;
+  color:var(--text);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;}
+.profile-card h3 .line{width:3px;height:1.2rem;background:var(--transfer);border-radius:2px;}
+.save-btn{background:var(--transfer);border:none;color:#000;padding:.55rem 1.5rem;
+  border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:.75rem;}
+.save-btn:hover{box-shadow:0 0 18px rgba(0,255,157,.3);}
+.save-ok{color:var(--transfer);font-size:.8rem;margin-left:.75rem;display:none;}
+.save-ok.show{display:inline;}
+
+@media(max-width:1024px){
+  .main{grid-template-columns:1fr;}
+  .hero-inner{grid-template-columns:1fr;}
+  .featured-card{grid-column:1;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){.cards-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+
+/* ── DİL & RTL DESTEĞİ ── */
+[dir="rtl"] .sec-title { flex-direction: row-reverse; }
+[dir="rtl"] .ticker-inner { animation-direction: reverse; }
+[dir="rtl"] .thread { direction: rtl; }
+[dir="rtl"] .ci-header { flex-direction: row-reverse; }
+[dir="rtl"] .ci-time { margin-right: auto; margin-left: 0; }
+[dir="rtl"] .t-time { margin-right: auto; margin-left: 0; }
+[dir="rtl"] .card-footer { flex-direction: row-reverse; }
+.lang-switcher { display:flex; align-items:center; gap:.35rem; }
+.lang-btn {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text2); padding: .25rem .55rem; border-radius: 4px;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .72rem; letter-spacing: .5px; cursor: pointer; transition: all .2s;
+}
+.lang-btn:hover, .lang-btn.active {
+  border-color: rgba(0,212,255,.35); color: var(--accent);
+  background: rgba(0,212,255,.07);
+}
+.geo-toast {
+  position: fixed; bottom: 4rem; left: 50%; transform: translateX(-50%);
+  background: var(--surface2); border: 1px solid rgba(0,255,157,.25);
+  color: var(--text); padding: .7rem 1.5rem; border-radius: 8px;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: .88rem;
+  letter-spacing: .5px; z-index: 600; display: flex; align-items: center; gap: .6rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,.5);
+  animation: slideUp .35s ease both;
+}
+@keyframes slideUp { from { opacity:0; transform: translateX(-50%) translateY(12px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
+.geo-toast .geo-flag { font-size: 1.2rem; }
+.geo-toast .geo-accept { background: var(--transfer); border: none; color: #000;
+  padding: .25rem .75rem; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: .75rem; cursor: pointer; margin-left: .5rem; }
+.geo-toast .geo-dismiss { color: var(--text3); cursor: pointer; font-size: .75rem; margin-left: .25rem; }
+
+/* ══ ARAMA SİSTEMİ ══ */
+.search-bar-wrap {
+  position: relative; flex: 1; max-width: 340px;
+}
+.search-bar-input {
+  width: 100%; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text); font-family: 'Barlow', sans-serif;
+  font-size: .88rem; padding: .38rem .9rem .38rem 2.2rem;
+  outline: none; transition: all .2s;
+}
+.search-bar-input:focus { border-color: rgba(0,212,255,.4); box-shadow: 0 0 12px rgba(0,212,255,.1); }
+.search-bar-input::placeholder { color: var(--text3); }
+.search-bar-icon {
+  position: absolute; left: .65rem; top: 50%; transform: translateY(-50%);
+  color: var(--text3); font-size: .9rem; pointer-events: none;
+}
+.search-dropdown {
+  position: absolute; top: calc(100% + .4rem); left: 0; right: 0;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+  z-index: 200; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.5);
+  display: none;
+}
+.search-dropdown.open { display: block; }
+.sd-section-label {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .65rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--text3);
+  padding: .5rem .9rem .25rem; border-top: 1px solid var(--border);
+}
+.sd-section-label:first-child { border-top: none; }
+.sd-item {
+  display: flex; align-items: center; gap: .6rem; padding: .6rem .9rem;
+  cursor: pointer; transition: background .15s; font-size: .85rem; color: var(--text2);
+}
+.sd-item:hover { background: rgba(255,255,255,.04); color: var(--text); }
+.sd-item .sd-icon { font-size: .8rem; width: 16px; text-align: center; }
+.sd-item .sd-match { color: var(--accent); font-weight: 600; }
+.sd-item .sd-type { font-size: .68rem; color: var(--text3); margin-left: auto; }
+.sd-item .sd-score { font-size: .65rem; color: var(--transfer); }
+
+/* Tam arama sayfası */
+.search-page-bar {
+  background: var(--surface2); border-bottom: 1px solid var(--border);
+  padding: 1.25rem 2rem; position: sticky; top: 52px; z-index: 90;
+}
+.search-page-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.search-page-input-wrap { position: relative; flex: 1; min-width: 240px; }
+.search-page-input {
+  width: 100%; background: var(--surface3); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text); font-family: 'Barlow', sans-serif;
+  font-size: 1rem; padding: .65rem 1rem .65rem 2.5rem; outline: none;
+  transition: border-color .2s;
+}
+.search-page-input:focus { border-color: rgba(0,212,255,.4); }
+.search-page-icon { position: absolute; left: .8rem; top: 50%; transform: translateY(-50%); color: var(--text3); }
+.search-page-btn {
+  background: var(--accent); border: none; color: #000; padding: .65rem 1.5rem;
+  border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .9rem; letter-spacing: 1px; cursor: pointer; transition: all .2s; white-space: nowrap;
+}
+.search-page-btn:hover { box-shadow: 0 0 18px rgba(0,212,255,.35); }
+
+.search-filters { display: flex; gap: .4rem; flex-wrap: wrap; }
+.sf-btn {
+  background: transparent; border: 1px solid var(--border); color: var(--text2);
+  padding: .28rem .75rem; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600; font-size: .72rem; letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+}
+.sf-btn:hover, .sf-btn.active {
+  border-color: rgba(0,212,255,.35); color: var(--accent); background: rgba(0,212,255,.07);
+}
+
+.search-layout { max-width: 1100px; margin: 1.5rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 2rem; }
+.search-results-area { min-height: 400px; }
+
+/* AI Özet kutusu */
+.ai-summary-box {
+  background: linear-gradient(135deg, rgba(0,212,255,.06), rgba(0,255,157,.04));
+  border: 1px solid rgba(0,212,255,.2); border-radius: 10px;
+  padding: 1.1rem 1.25rem; margin-bottom: 1.25rem;
+  display: flex; gap: .75rem; align-items: flex-start;
+  animation: fadeInUp .3s ease both;
+}
+.ai-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: .1rem; }
+.ai-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .68rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+.ai-text { font-size: .88rem; color: var(--text2); line-height: 1.6; }
+.ai-loading { display: flex; align-items: center; gap: .5rem; color: var(--text3); font-size: .82rem; }
+.ai-spinner { width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; }
+
+/* Sonuç meta */
+.results-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1rem; font-size: .8rem; color: var(--text3);
+}
+.results-meta strong { color: var(--text); }
+.results-meta .sort-wrap { display: flex; gap: .4rem; }
+.sort-btn { background: transparent; border: 1px solid var(--border); color: var(--text3);
+  padding: .2rem .6rem; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600; font-size: .68rem; letter-spacing: 1px; cursor: pointer; transition: all .2s; }
+.sort-btn.active, .sort-btn:hover { border-color: rgba(0,255,157,.3); color: var(--transfer); }
+
+/* Trending sidebar */
+.trending-widget { display: flex; flex-direction: column; gap: 1rem; }
+.trend-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.trend-hdr { padding: .8rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface2);
+  font-family: 'Bebas Neue', sans-serif; font-size: .95rem; letter-spacing: 2px; color: var(--text);
+  display: flex; align-items: center; gap: .5rem; }
+.trend-dot { width: 7px; height: 7px; border-radius: 50%; }
+.tag-cloud { padding: .9rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag-chip {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 4px;
+  padding: .25rem .65rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+  font-size: .78rem; color: var(--text2); cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: .3rem;
+}
+.tag-chip:hover { border-color: rgba(0,212,255,.3); color: var(--accent); background: rgba(0,212,255,.06); }
+.tag-chip .tag-count { font-size: .65rem; color: var(--text3); }
+.tag-chip.player-tag { border-color: rgba(0,255,157,.15); color: var(--transfer); }
+.tag-chip.player-tag:hover { border-color: rgba(0,255,157,.4); background: rgba(0,255,157,.06); }
+.trending-items { padding: .5rem; display: flex; flex-direction: column; gap: 0; }
+.trend-item {
+  padding: .65rem .75rem; border-bottom: 1px solid var(--border); cursor: pointer;
+  transition: background .15s; border-radius: 4px;
+}
+.trend-item:last-child { border-bottom: none; }
+.trend-item:hover { background: rgba(255,255,255,.03); }
+.trend-rank { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--text3);
+  width: 18px; display: inline-block; }
+.trend-title { font-size: .82rem; color: var(--text2); line-height: 1.4; }
+.trend-title strong { color: var(--text); }
+
+/* Sayfalama */
+.pagination { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-top: 1.5rem; }
+.pg-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text2);
+  width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all .2s; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; }
+.pg-btn:hover, .pg-btn.active { border-color: rgba(0,212,255,.35); color: var(--accent); background: rgba(0,212,255,.07); }
+.pg-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+/* Vurgulama */
+.highlight { background: rgba(0,212,255,.18); color: var(--accent); border-radius: 2px; padding: 0 1px; }
+.no-results { padding: 4rem 2rem; text-align: center; color: var(--text3); }
+.no-results .nr-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+.no-results .nr-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text2); }
+.no-results .nr-sub { font-size: .82rem; margin-top: .5rem; }
+
+@media(max-width:900px) { .search-layout { grid-template-columns: 1fr; } }
+
+/* ══ GELİR MODELİ — REKLAM ALANLARI ══ */
+.ad-slot {
+  background: var(--surface);
+  border: 1px dashed rgba(255,255,255,.08);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text3); font-size: .72rem;
+  letter-spacing: 1px; text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  position: relative; overflow: hidden;
+}
+.ad-slot::before {
+  content: 'REKLAM';
+  position: absolute; top: 4px; left: 8px;
+  font-size: .55rem; letter-spacing: 2px; color: var(--text3); opacity: .5;
+}
+.ad-slot.ad-banner   { width:100%; height:90px; margin:1rem 0; }
+.ad-slot.ad-sidebar  { width:100%; height:250px; margin-bottom:1rem; }
+.ad-slot.ad-in-feed  { grid-column:1/-1; height:100px; }
+.ad-slot iframe, .ad-slot ins { width:100%; height:100%; border:none; }
+
+/* Premium üyelik badge */
+.premium-badge {
+  background: linear-gradient(135deg, #f5c518, #e0a800);
+  color: #000; font-family: 'Bebas Neue', sans-serif;
+  font-size: .7rem; letter-spacing: 1.5px;
+  padding: .15rem .5rem; border-radius: 3px;
+  display: inline-block;
+}
+
+/* Premium CTA banner */
+.premium-cta {
+  background: linear-gradient(135deg, rgba(245,197,24,.1), rgba(0,212,255,.05));
+  border: 1px solid rgba(245,197,24,.25);
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
+  margin: 1.5rem 0; flex-wrap: wrap;
+}
+.premium-cta .pcta-icon { font-size: 2rem; flex-shrink: 0; }
+.premium-cta .pcta-text h4 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+  letter-spacing: 2px; color: var(--accent3); margin-bottom: .2rem;
+}
+.premium-cta .pcta-text p { font-size: .82rem; color: var(--text2); }
+.premium-cta .pcta-btn {
+  background: linear-gradient(135deg, #f5c518, #e0a800);
+  border: none; color: #000; padding: .6rem 1.5rem;
+  border-radius: 6px; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: .88rem; letter-spacing: 1px;
+  cursor: pointer; white-space: nowrap; transition: all .2s; margin-left: auto;
+}
+.premium-cta .pcta-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(245,197,24,.3); }
+
+/* Sponsorlu içerik etiketi */
+.sponsored-tag {
+  background: rgba(245,197,24,.08); border: 1px solid rgba(245,197,24,.2);
+  color: var(--accent3); font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: .62rem; letter-spacing: 2px;
+  padding: .12rem .45rem; border-radius: 3px; text-transform: uppercase;
+}
+
+/* ══ TAKIM FORUM SİSTEMİ ══ */
+.forum-hero {
+  background: linear-gradient(135deg, #080c10, #0d1520);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 2rem 0;
+  position: relative; overflow: hidden;
+}
+.forum-hero::before {
+  content: 'FORUM';
+  position: absolute; right: -1rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10rem; color: rgba(0,212,255,.04);
+  letter-spacing: 8px; pointer-events: none;
+}
+.forum-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.forum-tabs::-webkit-scrollbar { display: none; }
+.forum-tab-btn {
+  background: transparent; border: none; border-bottom: 3px solid transparent;
+  color: var(--text2); padding: .75rem 1.25rem;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .85rem; letter-spacing: 1px; white-space: nowrap;
+  cursor: pointer; transition: all .2s; flex-shrink: 0;
+}
+.forum-tab-btn:hover { color: var(--text); border-bottom-color: rgba(255,255,255,.2); }
+.forum-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.forum-tab-btn .tab-emoji { margin-right: .35rem; }
+
+/* Liga seçim grid */
+.league-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .75rem; margin-bottom: 1.5rem;
+}
+.league-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1rem; text-align: center;
+  cursor: pointer; transition: all .2s;
+}
+.league-card:hover { border-color: rgba(0,212,255,.3); transform: translateY(-2px); }
+.league-card.active { border-color: var(--accent); background: rgba(0,212,255,.06); }
+.league-card .lc-emoji { font-size: 2rem; display: block; margin-bottom: .4rem; }
+.league-card .lc-name {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .88rem; color: var(--text);
+}
+.league-card .lc-count { font-size: .72rem; color: var(--text3); margin-top: .2rem; }
+
+/* Takım grid */
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: .65rem; margin-bottom: 1.5rem;
+}
+.team-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: .85rem .75rem; text-align: center;
+  cursor: pointer; transition: all .2s; position: relative;
+}
+.team-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+.team-card.active { border-width: 2px; }
+.team-card .tc-emoji { font-size: 1.5rem; display: block; margin-bottom: .35rem; }
+.team-card .tc-name {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .82rem; color: var(--text); line-height: 1.2;
+}
+.team-card .tc-city { font-size: .65rem; color: var(--text3); margin-top: .15rem; }
+.team-card .tc-hot {
+  position: absolute; top: 4px; right: 4px;
+  font-size: .55rem; background: var(--accent2);
+  color: #fff; padding: 1px 4px; border-radius: 3px;
+}
+
+/* Forum içerik alanı */
+.forum-content-area { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+/* Yeni konu formu */
+.new-topic-form {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem;
+  display: none;
+}
+.new-topic-form.open { display: block; }
+.new-topic-form h3 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+  letter-spacing: 2px; color: var(--text); margin-bottom: 1rem;
+}
+.topic-title-input {
+  width: 100%; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text); font-family: 'Barlow', sans-serif;
+  font-size: .95rem; padding: .7rem 1rem; outline: none; margin-bottom: .75rem;
+  transition: border-color .2s;
+}
+.topic-title-input:focus { border-color: rgba(0,212,255,.4); }
+.topic-content-input {
+  width: 100%; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text); font-family: 'Barlow', sans-serif;
+  font-size: .88rem; padding: .7rem 1rem; outline: none; resize: vertical;
+  min-height: 100px; margin-bottom: .75rem; transition: border-color .2s;
+}
+.topic-content-input:focus { border-color: rgba(0,212,255,.4); }
+.topic-submit-btn {
+  background: var(--transfer); border: none; color: #000;
+  padding: .6rem 1.5rem; border-radius: 6px;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .88rem; letter-spacing: 1px; cursor: pointer; transition: all .2s;
+}
+.topic-submit-btn:hover { box-shadow: 0 0 18px rgba(0,255,157,.3); }
+
+/* Aktif kategori başlığı */
+.cat-breadcrumb {
+  display: flex; align-items: center; gap: .5rem;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .8rem; letter-spacing: 1px; color: var(--text2);
+  margin-bottom: 1rem; text-transform: uppercase;
+}
+.cat-breadcrumb .cb-sep { color: var(--text3); }
+.cat-breadcrumb .cb-active { color: var(--text); }
+
+/* Konu listesi header */
+.topic-list-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: .75rem;
+}
+.topic-list-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
+  letter-spacing: 2px; color: var(--text);
+  display: flex; align-items: center; gap: .5rem;
+}
+.open-topic-btn {
+  background: var(--transfer); border: none; color: #000;
+  padding: .4rem 1rem; border-radius: 5px;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: .78rem; letter-spacing: 1px; cursor: pointer; transition: all .2s;
+}
+.open-topic-btn:hover { box-shadow: 0 0 14px rgba(0,255,157,.3); }
+
+/* Pinned topic */
+.thread.pinned { border-color: rgba(245,197,24,.2); background: rgba(245,197,24,.03); }
+.pin-icon { color: var(--accent3); font-size: .8rem; }
+
+@media(max-width:768px) {
+  .league-grid { grid-template-columns: repeat(2,1fr); }
+  .team-grid { grid-template-columns: repeat(3,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="showPage('home')">Goal<span>Transfer</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a class="active" onclick="showPage('home')" data-i18n="nav_home">Ana Sayfa</a></li>
+    <li><a onclick="showPage('transfers')" data-i18n="nav_transfers">Transferler</a></li>
+    <li><a onclick="showPage('forum')" data-i18n="nav_forum">Forum</a></li>
+    <li><a onclick="showPage('news')" data-i18n="nav_news">Haberler</a></li>
+    <li><a onclick="showPage('search')">🔍 Ara</a></li>
+  </ul>
+  <!-- NAV ARAMA ÇUBUĞU -->
+  <div class="search-bar-wrap" id="navSearchWrap">
+    <span class="search-bar-icon">🔍</span>
+    <input class="search-bar-input" id="navSearchInput" placeholder="Oyuncu, kulüp, haber..."
+      autocomplete="off"
+      oninput="navSearchInput(this.value)"
+      onkeydown="if(event.key==='Enter')goToSearch(this.value)"
+      onfocus="showSearchDropdown()"
+      onblur="setTimeout(hideSearchDropdown,200)">
+    <div class="search-dropdown" id="searchDropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Tema değiştir">🌙</button>
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn" onclick="setLang('tr')" title="Türkçe">🇹🇷 TR</button>
+    <button class="lang-btn" onclick="setLang('es')" title="Español">🌎 ES</button>
+    <button class="lang-btn" onclick="setLang('ar')" title="العربية">🌍 AR</button>
+    <button class="lang-btn" onclick="setLang('zh')" title="中文">🇨🇳 ZH</button>
+    <button class="lang-btn" onclick="setLang('en')" title="English">🌐 EN</button>
+  </div>
+  <div class="nav-right" id="navRight">
+    <button class="btn-sm btn-outline" onclick="openModal('login')">Giriş</button>
+    <button class="btn-sm btn-primary" onclick="openModal('register')">Kayıt Ol</button>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="ticker">
+    <span class="t-label">🔴 SON DAKİKA</span>
+    <span class="t-item"><span class="t-dot"></span>Yükleniyor...</span>
+    <span class="t-label">🔴 SON DAKİKA</span>
+    <span class="t-item"><span class="t-dot"></span>Yükleniyor...</span>
+  </div>
+</div>
+
+<!-- ═══ ANA SAYFA ═══ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="featured-card" id="featuredCard">
+        <div class="breaking-badge"><span class="pulse"></span>Son Dakika</div>
+        <h2>Haberler <span class="hl">YÜKLENİYOR...</span></h2>
+        <div class="transfer-meta">
+          <div class="club-tag">Backend bağlanıyor</div>
+        </div>
+      </div>
+      <div class="side-mini" id="sideTransfers">
+        <div class="mini-card"><h4>Yükleniyor...</h4><div class="mc">—</div></div>
+        <div class="mini-card"><h4>Yükleniyor...</h4><div class="mc">—</div></div>
+        <div class="mini-card"><h4>Yükleniyor...</h4><div class="mc">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num" id="statTransfer">—</div><div class="stat-lbl">Transfer</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-num" id="statTotal">—</div><div class="stat-lbl">Toplam Haber</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-num" id="statTopics">—</div><div class="stat-lbl">Forum Konusu</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="status-dot status-offline" id="apiDot"></span><span id="apiLabel">Offline</span></div>
+        <div class="stat-lbl">API Durumu</div>
+      </div>
+      <button class="refresh-btn" onclick="refreshData()">↺ Yenile</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <div>
+      <!-- Premium CTA — Giriş yapmamışlara göster -->
+      <div class="premium-cta" id="premiumCta" style="display:none">
+        <span class="pcta-icon">⭐</span>
+        <div class="pcta-text">
+          <h4>Premium Üye Ol — Reklamlardan Kurtul</h4>
+          <p>Reklamsız deneyim, anlık bildirimler, özel transfer analizleri ve daha fazlası.</p>
+        </div>
+        <button class="pcta-btn" onclick="openModal('register')">Ücretsiz Dene →</button>
+      </div>
+
+      <!-- TRANSFER HABERLERİ -->
+      <section style="margin-bottom:2.5rem">
+        <div class="sec-hdr">
+          <div class="sec-title">
+            <div class="sec-line" style="height:1.5rem;background:var(--transfer)"></div>
+            TRANSFER HABERLERİ
+          </div>
+          <span class="see-all" onclick="showPage('transfers')">Tümünü Gör</span>
+        </div>
+        <div class="filter-row" id="homeFilters">
+          <button class="ftab active" data-filter="all" onclick="filterCards(this,'all')">Tümü</button>
+          <button class="ftab" data-filter="confirmed" onclick="filterCards(this,'confirmed')">Resmi</button>
+          <button class="ftab" data-filter="rumor" onclick="filterCards(this,'rumor')">İddia</button>
+          <button class="ftab" data-filter="loan" onclick="filterCards(this,'loan')">Kiralık</button>
+        </div>
+        <div id="transferCards" class="cards-grid">
+          <div class="skeleton"></div><div class="skeleton"></div>
+          <div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+      </section>
+
+      <!-- FORUM BAŞLIKLARI -->
+      <section class="forum-sec">
+        <div class="sec-hdr">
+          <div class="sec-title">
+            <div class="sec-line" style="height:1.5rem;background:var(--accent)"></div>
+            SICAK FORUM KONULARI
+          </div>
+          <span class="see-all" onclick="showPage('forum')">Foruma Git</span>
+        </div>
+        <div id="homeThreads" class="thread-list">
+          <div class="skeleton" style="height:64px"></div>
+          <div class="skeleton" style="height:64px"></div>
+          <div class="skeleton" style="height:64px"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget">
+        <div class="w-hdr"><span class="w-dot" style="background:var(--transfer)"></span>GÜNDEM TRANSFERLER</div>
+        <div class="rumor-list" id="sidebarRumors">
+          <div class="skeleton" style="height:72px"></div>
+          <div class="skeleton" style="height:72px"></div>
+          <div class="skeleton" style="height:72px"></div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="w-hdr"><span class="w-dot" style="background:var(--accent)"></span>SON HABERLER</div>
+        <div class="news-list-w" id="sidebarNews">
+          <div class="skeleton" style="height:56px;margin:.35rem"></div>
+          <div class="skeleton" style="height:56px;margin:.35rem"></div>
+          <div class="skeleton" style="height:56px;margin:.35rem"></div>
+        </div>
+      </div>
+      <!-- Sidebar Reklam — 300x250 -->
+      <div class="ad-slot ad-sidebar" id="ad-sidebar">
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="ZZZZ" data-ad-format="auto"></ins> -->
+      </div>
+
+      <div class="widget">
+        <div class="w-hdr"><span class="w-dot" style="background:var(--accent2)"></span>FORUM DURUMU</div>
+        <div class="online-w">
+          <div class="os"><span class="l">Toplam Haber</span><span class="v" id="swTotal">—</span></div>
+          <div class="os"><span class="l">Transfer Haberi</span><span class="v" id="swTransfer">—</span></div>
+          <div class="os"><span class="l">Forum Konusu</span><span class="v" id="swTopics">—</span></div>
+          <div class="os"><span class="l">Son Güncelleme</span><span class="v" id="swUpdate" style="font-size:.75rem">—</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ═══ TRANSFERLER SAYFASI ═══ -->
+<div id="page-transfers" class="page">
+  <div style="max-width:1400px;margin:0 auto;padding:2rem;">
+    <div class="sec-hdr" style="margin-bottom:1.5rem">
+      <div class="sec-title">
+        <div class="sec-line" style="height:1.5rem;background:var(--transfer)"></div>
+        TÜM TRANSFER HABERLERİ
+      </div>
+    </div>
+    <div class="filter-row">
+      <button class="ftab active" onclick="filterTransferPage(this,'all')">Tümü</button>
+      <button class="ftab" onclick="filterTransferPage(this,'high')">🔴 Önemli</button>
+      <button class="ftab" onclick="filterTransferPage(this,'confirmed')">✓ Resmi</button>
+      <button class="ftab" onclick="filterTransferPage(this,'rumor')">⚡ İddia</button>
+      <button class="ftab" onclick="filterTransferPage(this,'loan')">↩ Kiralık</button>
+    </div>
+    <div id="allTransferCards" class="cards-grid">
+      <div class="skeleton"></div><div class="skeleton"></div>
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FORUM SAYFASI ═══ -->
+<div id="page-forum" class="page">
+
+  <!-- Forum Hero + Tab Bar -->
+  <div class="forum-hero">
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:.75rem">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;color:var(--text)">
+          <span style="color:var(--accent)">⚽</span> FORUM
+        </div>
+        <button class="open-topic-btn" onclick="toggleNewTopicForm()">+ Yeni Konu</button>
+      </div>
+      <!-- Ana sekmeler -->
+      <div class="forum-tabs" id="forumMainTabs">
+        <button class="forum-tab-btn active" onclick="switchForumSection(this,'genel')">
+          <span class="tab-emoji">💬</span>Genel
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'superlig')">
+          <span class="tab-emoji">🇹🇷</span>Süper Lig
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'premier')">
+          <span class="tab-emoji">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>Premier Lig
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'laliga')">
+          <span class="tab-emoji">🇪🇸</span>La Liga
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'bundesliga')">
+          <span class="tab-emoji">🇩🇪</span>Bundesliga
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'seriea')">
+          <span class="tab-emoji">🇮🇹</span>Serie A
+        </button>
+        <button class="forum-tab-btn" onclick="switchForumSection(this,'turnuvalar')">
+          <span class="tab-emoji">🏆</span>Turnuvalar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forum İçerik -->
+  <div class="forum-content-area">
+
+    <!-- Yeni Konu Formu -->
+    <div class="new-topic-form" id="newTopicForm">
+      <h3>💬 YENİ KONU AÇ</h3>
+      <div style="font-size:.78rem;color:var(--text3);margin-bottom:.75rem" id="newTopicCatInfo"></div>
+      <input class="topic-title-input" id="newTopicTitle" placeholder="Konu başlığı (ör: Haaland bu sezon bekleneni verdi mi?)">
+      <textarea class="topic-content-input" id="newTopicContent" placeholder="Düşüncelerini yaz..."></textarea>
+      <div style="display:flex;gap:.75rem;align-items:center">
+        <button class="topic-submit-btn" onclick="submitNewTopic()">💬 Konuyu Aç</button>
+        <button onclick="toggleNewTopicForm()" style="background:transparent;border:1px solid var(--border);color:var(--text2);padding:.55rem 1rem;border-radius:5px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem">İptal</button>
+        <span id="newTopicStatus" style="font-size:.8rem;color:var(--transfer)"></span>
+      </div>
+    </div>
+
+    <!-- Genel Bölüm -->
+    <div id="forum-section-genel" class="forum-section-panel">
+      <div class="topic-list-header">
+        <div class="topic-list-title">
+          <span>💬</span> GENEL FORUM
+        </div>
+      </div>
+      <!-- Genel alt kategoriler -->
+      <div class="league-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+        <div class="league-card" onclick="loadCategoryTopics('transfer-genel','Transferler')">
+          <span class="lc-emoji">⚽</span>
+          <div class="lc-name">Transferler</div>
+          <div class="lc-count">AI destekli başlıklar</div>
+        </div>
+        <div class="league-card" onclick="loadCategoryTopics('mac-analiz','Maç Analizleri')">
+          <span class="lc-emoji">🏆</span>
+          <div class="lc-name">Maç Analizleri</div>
+          <div class="lc-count">Maç tartışmaları</div>
+        </div>
+        <div class="league-card" onclick="loadCategoryTopics('takim-taktik','Taktik & Strateji')">
+          <span class="lc-emoji">📊</span>
+          <div class="lc-name">Taktik & Strateji</div>
+          <div class="lc-count">Taktik tartışmaları</div>
+        </div>
+        <div class="league-card" onclick="loadCategoryTopics('spor-genel','Spor Haberleri')">
+          <span class="lc-emoji">📰</span>
+          <div class="lc-name">Spor Haberleri</div>
+          <div class="lc-count">Güncel haberler</div>
+        </div>
+      </div>
+      <!-- AI Konuları -->
+      <div class="topic-list-header">
+        <div class="topic-list-title"><span style="font-size:1rem">🤖</span> AI BAŞLIKLARI</div>
+      </div>
+      <div id="forumTopicsList" class="thread-list">
+        <div class="skeleton" style="height:64px"></div>
+        <div class="skeleton" style="height:64px"></div>
+        <div class="skeleton" style="height:64px"></div>
+      </div>
+    </div>
+
+    <!-- Lig Takım Panelleri -->
+    <div id="forum-section-superlig"   class="forum-section-panel" style="display:none"></div>
+    <div id="forum-section-premier"    class="forum-section-panel" style="display:none"></div>
+    <div id="forum-section-laliga"     class="forum-section-panel" style="display:none"></div>
+    <div id="forum-section-bundesliga" class="forum-section-panel" style="display:none"></div>
+    <div id="forum-section-seriea"     class="forum-section-panel" style="display:none"></div>
+    <div id="forum-section-turnuvalar" class="forum-section-panel" style="display:none"></div>
+
+    <!-- Konu Listesi (takım seçilince açılır) -->
+    <div id="teamTopicsArea" style="display:none">
+      <div class="cat-breadcrumb" id="teamBreadcrumb"></div>
+      <div class="topic-list-header">
+        <div class="topic-list-title" id="teamTopicsTitle"></div>
+      </div>
+      <div id="teamTopicsList" class="thread-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ HABERLER SAYFASI ═══ -->
+<div id="page-news" class="page">
+  <div style="max-width:1400px;margin:0 auto;padding:2rem;">
+    <div class="sec-hdr" style="margin-bottom:1.5rem">
+      <div class="sec-title">
+        <div class="sec-line" style="height:1.5rem;background:var(--accent3)"></div>
+        SPOR HABERLERİ
+      </div>
+    </div>
+    <div class="filter-row">
+      <button class="ftab active" onclick="filterNewsPage(this,'all')">Tümü</button>
+      <button class="ftab" onclick="filterNewsPage(this,'match')">🏆 Maç</button>
+      <button class="ftab" onclick="filterNewsPage(this,'injury')">🤕 Sakatlık</button>
+      <button class="ftab" onclick="filterNewsPage(this,'general')">📰 Genel</button>
+    </div>
+    <div id="allNewsCards" class="cards-grid">
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PROFİL SAYFASI ═══ -->
+<div id="page-profile" class="page">
+  <div class="profile-header">
+    <div class="profile-inner">
+      <img src="" alt="avatar" class="profile-av" id="profileAvatar">
+      <div class="profile-info">
+        <h1 id="profileUsername">Kullanıcı</h1>
+        <div class="p-meta">
+          <span id="profileJoined"></span>
+          &nbsp;·&nbsp; Favori Kulüp: <span class="p-club" id="profileClub">—</span>
+        </div>
+        <div style="font-size:.82rem;color:var(--text2);margin-top:.35rem" id="profileBio"></div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-body">
+    <div class="profile-card">
+      <h3><span class="line"></span>PROFİLİ DÜZENLE</h3>
+      <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        <input class="form-input" id="editUsername" placeholder="kullanıcı_adı">
+      </div>
+      <div class="form-group">
+        <label>Hakkımda</label>
+        <input class="form-input" id="editBio" placeholder="Kendinizi kısaca tanıtın...">
+      </div>
+      <div class="form-group">
+        <label>Favori Kulüp</label>
+        <input class="form-input" id="editClub" placeholder="Galatasaray, Fenerbahçe...">
+      </div>
+      <button class="save-btn" onclick="saveProfile()">💾 Kaydet</button>
+      <span class="save-ok" id="saveOk">✅ Kaydedildi!</span>
+    </div>
+
+    <!-- Şifre Değiştir -->
+    <div class="profile-card" id="pwChangeCard">
+      <h3><span class="line" style="background:var(--accent2)"></span>ŞİFRE DEĞİŞTİR</h3>
+      <div class="form-group">
+        <label>Mevcut Şifre</label>
+        <input class="form-input" id="oldPassword" type="password" placeholder="••••••••">
+      </div>
+      <div class="form-group">
+        <label>Yeni Şifre</label>
+        <input class="form-input" id="newPassword" type="password" placeholder="En az 6 karakter">
+      </div>
+      <div class="form-group">
+        <label>Yeni Şifre (Tekrar)</label>
+        <input class="form-input" id="newPassword2" type="password" placeholder="Tekrar gir">
+      </div>
+      <div class="form-error" id="pwError"></div>
+      <button class="save-btn" style="background:var(--accent2)" onclick="changePassword()">🔑 Değiştir</button>
+      <span class="save-ok" id="pwOk">✅ Şifre değiştirildi!</span>
+    </div>
+
+    <!-- Takip Ettiklerim -->
+    <div class="profile-card">
+      <h3><span class="line" style="background:var(--accent3)"></span>TAKİP ETTİKLERİM</h3>
+      <div id="followListWrap" style="margin-bottom:1rem">
+        <div style="font-size:.75rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;">TAKIMLAR</div>
+        <div id="followedTeams" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem"></div>
+        <div style="font-size:.75rem;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;">OYUNCULAR</div>
+        <div id="followedPlayers" style="display:flex;flex-wrap:wrap;gap:.4rem"></div>
+      </div>
+      <button class="save-btn" style="background:var(--accent3);color:#000" onclick="showPage('follow-feed')">📰 Takip Akışım</button>
+    </div>
+
+    <!-- Yorum Geçmişi -->
+    <div class="profile-card">
+      <h3><span class="line" style="background:var(--text2)"></span>YORUM GEÇMİŞİ</h3>
+      <div id="userCommentHistory" style="display:flex;flex-direction:column;gap:.5rem">
+        <div style="color:var(--text3);font-size:.82rem">Yükleniyor...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TAKİP AKIŞI SAYFASI ═══ -->
+<div id="page-follow-feed" class="page">
+  <div style="max-width:1100px;margin:0 auto;padding:2rem">
+    <div class="sec-hdr" style="margin-bottom:1.5rem">
+      <div class="sec-title">
+        <div class="sec-line" style="height:1.5rem;background:var(--accent3)"></div>
+        TAKİP AKIŞIM
+      </div>
+      <span class="see-all" onclick="showPage('profile')">← Profil</span>
+    </div>
+    <div id="followFeedCards" class="cards-grid">
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARAMA SAYFASI ═══ -->
+<div id="page-search" class="page">
+
+  <!-- Yapışkan arama çubuğu -->
+  <div class="search-page-bar">
+    <div class="search-page-inner">
+      <div class="search-page-input-wrap">
+        <span class="search-page-icon">🔍</span>
+        <input class="search-page-input" id="searchPageInput"
+          placeholder="Oyuncu, kulüp, transfer, haber ara..."
+          onkeydown="if(event.key==='Enter')runSearch()"
+          oninput="debouncedSearch(this.value)">
+      </div>
+      <button class="search-page-btn" onclick="runSearch()">Ara</button>
+      <div class="search-filters" id="searchFilters">
+        <button class="sf-btn active" data-f="all" onclick="setSearchFilter(this,'all')">Tümü</button>
+        <button class="sf-btn" data-f="transfer" onclick="setSearchFilter(this,'transfer')">⚽ Transfer</button>
+        <button class="sf-btn" data-f="match" onclick="setSearchFilter(this,'match')">🏆 Maç</button>
+        <button class="sf-btn" data-f="injury" onclick="setSearchFilter(this,'injury')">🤕 Sakatlık</button>
+        <button class="sf-btn" data-f="general" onclick="setSearchFilter(this,'general')">📰 Genel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-layout">
+    <!-- Sol: Sonuçlar -->
+    <div class="search-results-area">
+      <!-- AI Özet -->
+      <div id="aiSummaryBox" style="display:none" class="ai-summary-box">
+        <span class="ai-icon">🤖</span>
+        <div>
+          <div class="ai-label">Claude AI Özet</div>
+          <div class="ai-text" id="aiSummaryText"></div>
+        </div>
+      </div>
+
+      <!-- Meta + sıralama -->
+      <div class="results-meta" id="resultsMeta" style="display:none">
+        <span id="resultsMetaText"></span>
+        <div class="sort-wrap">
+          <button class="sort-btn active" onclick="setSort(this,'relevance')">🎯 İlgili</button>
+          <button class="sort-btn" onclick="setSort(this,'date')">🕐 Yeni</button>
+          <button class="sort-btn" onclick="setSort(this,'likes')">❤️ Popüler</button>
+        </div>
+      </div>
+
+      <!-- Sonuç kartları -->
+      <div id="searchResultCards" class="cards-grid"></div>
+
+      <!-- Sayfalama -->
+      <div class="pagination" id="searchPagination"></div>
+    </div>
+
+    <!-- Sağ: Trending sidebar -->
+    <aside class="trending-widget">
+      <!-- Gündem haberleri -->
+      <div class="trend-box">
+        <div class="trend-hdr"><span class="trend-dot" style="background:var(--accent2)"></span>🔥 GÜNDEM</div>
+        <div class="trending-items" id="trendingItems">
+          <div class="trend-item"><span style="color:var(--text3);font-size:.8rem">Yükleniyor...</span></div>
+        </div>
+      </div>
+      <!-- Oyuncu etiketleri -->
+      <div class="trend-box">
+        <div class="trend-hdr"><span class="trend-dot" style="background:var(--transfer)"></span>👤 OYUNCULAR</div>
+        <div class="tag-cloud" id="playerTagCloud"></div>
+      </div>
+      <!-- Kulüp etiketleri -->
+      <div class="trend-box">
+        <div class="trend-hdr"><span class="trend-dot" style="background:var(--accent)"></span>🏟 KULÜPLER</div>
+        <div class="tag-cloud" id="clubTagCloud"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ═══ ADMİN PANELİ ═══ -->
+<div id="page-admin" class="page">
+  <div style="background:linear-gradient(135deg,#0a0a1a,#0d1117);border-bottom:1px solid var(--border);padding:1.5rem 2rem;position:relative;overflow:hidden;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;color:var(--text);">
+        <span style="color:var(--accent2)">⚙</span> ADMİN PANELİ
+      </div>
+      <div style="font-size:.82rem;color:var(--text2);margin-top:.25rem;">GoalTransfer Yönetim Merkezi</div>
+    </div>
+  </div>
+  <div class="admin-layout">
+    <!-- Sidebar nav -->
+    <nav class="admin-sidebar-nav">
+      <button class="admin-nav-item active" onclick="adminNav(this,'admin-dashboard')">📊 Genel Bakış</button>
+      <button class="admin-nav-item" onclick="adminNav(this,'admin-users')">👥 Kullanıcılar</button>
+      <button class="admin-nav-item" onclick="adminNav(this,'admin-news')">📰 Haberler</button>
+      <button class="admin-nav-item" onclick="adminNav(this,'admin-broadcast')">📢 Duyuru Gönder</button>
+    </nav>
+    <!-- Main -->
+    <div class="admin-main">
+      <!-- Dashboard -->
+      <div class="admin-section active" id="admin-dashboard">
+        <div class="admin-stats-grid" id="adminStatsGrid">
+          <div class="admin-stat"><div class="admin-stat-num" id="as-users">—</div><div class="admin-stat-lbl">Toplam Üye</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="as-news">—</div><div class="admin-stat-lbl">Haber</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="as-topics">—</div><div class="admin-stat-lbl">Forum Konusu</div></div>
+          <div class="admin-stat"><div class="admin-stat-num" id="as-online">—</div><div class="admin-stat-lbl">Çevrimiçi</div></div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--text);margin-bottom:1rem;">MANUEL HABER EKLE (Claude ile Analiz)</div>
+          <textarea class="admin-input" id="adminNewsText" rows="4" placeholder="Haber metnini yapıştır — Claude otomatik analiz edecek..."></textarea>
+          <button class="admin-btn" onclick="adminAddNews()">⚡ Analiz Et & Ekle</button>
+          <span id="adminAddStatus" style="font-size:.8rem;color:var(--transfer);margin-left:.75rem;"></span>
+        </div>
+      </div>
+      <!-- Kullanıcılar -->
+      <div class="admin-section" id="admin-users">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;color:var(--text);">KULLANICILAR</div>
+          <button class="admin-btn" style="font-size:.72rem;padding:.35rem .9rem;" onclick="loadAdminUsers()">↺ Yenile</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Kullanıcı</th><th>E-posta</th><th>Kayıt</th><th>Sağlayıcı</th><th>İşlem</th></tr></thead>
+            <tbody id="adminUsersBody"><tr><td colspan="5" style="text-align:center;color:var(--text3);">Yükleniyor...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Haberler -->
+      <div class="admin-section" id="admin-news">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:2px;color:var(--text);">HABERLER</div>
+          <button class="admin-btn" style="font-size:.72rem;padding:.35rem .9rem;" onclick="loadAdminNews()">↺ Yenile</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Başlık</th><th>Tür</th><th>Kaynak</th><th>Tarih</th><th>İşlem</th></tr></thead>
+            <tbody id="adminNewsBody"><tr><td colspan="5" style="text-align:center;color:var(--text3);">Yükleniyor...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Broadcast -->
+      <div class="admin-section" id="admin-broadcast">
+        <div class="broadcast-form">
+          <h3>📢 TÜM KULLANICILARA DUYURU GÖNDER</h3>
+          <input class="admin-input" id="bcTitle" placeholder="Başlık (ör: Son Dakika Transfer!)">
+          <textarea class="admin-input" id="bcBody" rows="3" placeholder="Duyuru metni..."></textarea>
+          <input class="admin-input" id="bcLink" placeholder="Link (isteğe bağlı, ör: /forum/...)">
+          <button class="admin-btn" onclick="sendBroadcast()">📢 Gönder</button>
+          <span id="bcStatus" style="font-size:.8rem;color:var(--transfer);margin-left:.75rem;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC MODAL (Yorum sayfası) -->
+<div class="topic-modal-overlay" id="topicModal" onclick="closeTopicOutside(event)">
+  <div class="topic-modal">
+    <div class="tm-hdr">
+      <div class="tm-title" id="tmTitle">Konu Başlığı</div>
+      <button class="tm-close" onclick="closeTopic()">✕ Kapat</button>
+    </div>
+    <div class="tm-body">
+      <div class="tm-news-preview" id="tmNewsPreview"></div>
+      <!-- Yorum formu -->
+      <div class="comment-form" id="tmCommentForm">
+        <img src="" alt="av" class="comment-av" id="tmUserAv">
+        <div class="comment-input-wrap">
+          <textarea class="comment-textarea" id="tmCommentText" placeholder="Görüşünü yaz..." rows="3"></textarea>
+          <button class="comment-submit" onclick="submitComment()">💬 Yorum Yap</button>
+        </div>
+      </div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;
+        letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem;"
+        id="tmCommentCount">YORUMLAR</div>
+      <div class="comment-list" id="tmCommentList">
+        <div style="padding:2rem;text-align:center;color:var(--text3);">Yorumlar yükleniyor...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BİLDİRİM PANELİ -->
+<div class="notif-panel" id="notifPanel">
+  <div class="notif-hdr">
+    <span class="notif-hdr-title">BİLDİRİMLER</span>
+    <span class="notif-read-all" onclick="markAllRead()">Tümünü Okundu İşaretle</span>
+  </div>
+  <div class="notif-scroll" id="notifList">
+    <div class="notif-empty">Henüz bildirim yok</div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Goal<span>Transfer</span></h2>
+    <div class="modal-sub" id="modalSub">Hesabına giriş yap</div>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin" onclick="switchTab('login')">Giriş Yap</button>
+      <button class="modal-tab" id="tabRegister" onclick="switchTab('register')">Kayıt Ol</button>
+    </div>
+
+    <div class="form-error" id="authError"></div>
+
+    <!-- GİRİŞ FORMU -->
+    <div id="formLogin">
+      <div class="form-group">
+        <label>E-posta</label>
+        <input class="form-input" id="loginEmail" type="email" placeholder="ornek@mail.com">
+      </div>
+      <div class="form-group">
+        <label>Şifre</label>
+        <input class="form-input" id="loginPassword" type="password" placeholder="••••••••">
+      </div>
+      <button class="btn-full btn-primary" onclick="doLogin()">Giriş Yap</button>
+      <div style="text-align:right;margin-top:.5rem">
+        <span style="font-size:.78rem;color:var(--accent);cursor:pointer" onclick="showForgotPassword()">Şifremi unuttum</span>
+      </div>
+      <div class="or-div">veya</div>
+      <button class="btn-full btn-google" onclick="doGoogleAuth()">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Google ile Giriş Yap
+      </button>
+    </div>
+
+    <!-- ŞİFRE SIFIRLAMA FORMU -->
+    <div id="formForgot" style="display:none">
+      <div class="form-group">
+        <label>E-posta Adresin</label>
+        <input class="form-input" id="forgotEmail" type="email" placeholder="ornek@mail.com">
+      </div>
+      <button class="btn-full btn-primary" onclick="doForgotPassword()">📧 Sıfırlama Linki Gönder</button>
+      <div style="text-align:center;margin-top:.75rem">
+        <span style="font-size:.78rem;color:var(--accent);cursor:pointer" onclick="switchTab('login')">← Girişe Dön</span>
+      </div>
+    </div>
+
+    <!-- KAYIT FORMU -->
+    <div id="formRegister" style="display:none">
+      <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        <input class="form-input" id="regUsername" placeholder="taraftar_42">
+      </div>
+      <div class="form-group">
+        <label>E-posta</label>
+        <input class="form-input" id="regEmail" type="email" placeholder="ornek@mail.com">
+      </div>
+      <div class="form-group">
+        <label>Şifre</label>
+        <input class="form-input" id="regPassword" type="password" placeholder="En az 6 karakter">
+      </div>
+      <button class="btn-full btn-primary" onclick="doRegister()">Kayıt Ol</button>
+      <div class="or-div">veya</div>
+      <button class="btn-full btn-google" onclick="doGoogleAuth()">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Google ile Kayıt Ol
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- API STATUS BADGE -->
+<div class="api-status" id="apiStatus">
+  <span class="status-dot status-offline" id="apiBadgeDot"></span>
+  <span id="apiBadgeText">Backend bağlanıyor...</span>
+</div>
+
+<footer><strong><span>Goal</span>Transfer</strong> © 2025 — AI destekli spor forumu</footer>
+
+<script>
+// ── Konfigürasyon: Backend URL'ini buraya gir
+// Otomatik URL tespiti — local dev vs production
+const API_BASE  = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:3000/api'
+  : window.location.origin + '/api';
+const AUTH_BASE_RAW = API_BASE.replace('/api', '/auth');
+
+// ── Global veri
+let allNews      = [];
+let allTransfers = [];
+let allTopics    = [];
+let stats        = {};
+let isConnected  = false;
+
+// ── Sayfa geçişleri
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelector(`#page-${name}`).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const map = { home:0, transfers:1, forum:2, news:3 };
+  const links = document.querySelectorAll('.nav-links a');
+  if (links[map[name]]) links[map[name]].classList.add('active');
+
+  if (name === 'transfers') renderTransferPage(allTransfers);
+  if (name === 'forum')     renderForumPage(allTopics);
+  if (name === 'news')      renderNewsPage(allNews.filter(n => n.type !== 'transfer'));
+}
+
+// ── API'den veri çek
+async function fetchData() {
+  try {
+    const [newsRes, transferRes, topicRes, statsRes] = await Promise.all([
+      fetch(`${API_BASE}/news?limit=40`),
+      fetch(`${API_BASE}/transfers`),
+      fetch(`${API_BASE}/forum/topics`),
+      fetch(`${API_BASE}/stats`),
+    ]);
+
+    if (!newsRes.ok) throw new Error('API yanıt vermedi');
+
+    const newsData      = await newsRes.json();
+    const transferData  = await transferRes.json();
+    const topicData     = await topicRes.json();
+    const statsData     = await statsRes.json();
+
+    allNews      = newsData.data      || [];
+    allTransfers = transferData.data  || [];
+    allTopics    = topicData.data     || [];
+    stats        = statsData.data     || {};
+
+    setConnected(true);
+    renderAll();
+  } catch (err) {
+    setConnected(false);
+    console.warn('Backend bağlantısı yok, demo modu aktif:', err.message);
+    loadDemoData();
+  }
+}
+
+function setConnected(val) {
+  isConnected = val;
+  document.getElementById('apiDot').className   = `status-dot ${val ? 'status-online' : 'status-offline'}`;
+  document.getElementById('apiLabel').textContent = val ? 'Online' : 'Offline';
+  document.getElementById('apiBadgeDot').className = `status-dot ${val ? 'status-online' : 'status-offline'}`;
+  document.getElementById('apiBadgeText').textContent = val ? '✅ Backend bağlı' : '⚠️ Demo modu (Backend kapalı)';
+}
+
+async function refreshData() {
+  if (isConnected) {
+    try { await fetch(`${API_BASE}/refresh`, { method: 'POST' }); } catch {}
+  }
+  await fetchData();
+}
+
+// ── RENDER FONKSİYONLARI
+function typeBar(type) {
+  const m = { transfer:'bar-transfer', match:'bar-match', injury:'bar-injury', general:'bar-general' };
+  return m[type] || 'bar-general';
+}
+function typeBadge(type) {
+  const m = { transfer:'b-transfer ⚽ Transfer', match:'b-match 🏆 Maç', injury:'b-injury 🤕 Sakatlık', general:'b-general 📰 Genel' };
+  return m[type] || 'b-general 📰 Genel';
+}
+function impBadge(imp) {
+  const m = { high:'b-high 🔴 Önemli', medium:'b-medium 🟡 Orta', low:'b-low ⚪ Düşük' };
+  return m[imp] || 'b-low ⚪ Düşük';
+}
+function statusBadge(s) {
+  const m = { confirmed:'b-confirmed ✓ Kesinleşti', rumor:'b-rumor ⚡ İddia', loan:'b-rumor ↩ Kiralık', contract_extension:'b-transfer 📝 Sözleşme' };
+  return m[s] ? m[s] : null;
+}
+function relTime(dateStr) {
+  const diff = Date.now() - new Date(dateStr);
+  const m = Math.floor(diff/60000);
+  if (m < 1)   return 'Az önce';
+  if (m < 60)  return `${m} dak. önce`;
+  if (m < 1440) return `${Math.floor(m/60)} saat önce`;
+  return `${Math.floor(m/1440)} gün önce`;
+}
+
+function buildCard(item, delay=0) {
+  const tb = typeBadge(item.type).split(' ');
+  const ib = impBadge(item.importance).split(' ');
+  const tbClass = tb[0], tbLabel = tb.slice(1).join(' ');
+  const ibClass = ib[0], ibLabel = ib.slice(1).join(' ');
+
+  let statusHtml = '';
+  if (item.transfer_status) {
+    const sb = statusBadge(item.transfer_status);
+    if (sb) { const p = sb.split(' '); statusHtml = `<span class="badge ${p[0]}">${p.slice(1).join(' ')}</span>`; }
+  }
+
+  const flowHtml = (item.from_club && item.to_club)
+    ? `<div class="tf-flow">
+        <span class="tf-from">${item.from_club}</span>
+        <span class="tf-arr">→</span>
+        <span class="tf-to">${item.to_club}</span>
+        ${item.fee ? `<span class="tf-fee">${item.fee}</span>` : ''}
+       </div>` : '';
+
+  return `
+    <div class="t-card fade-in" style="animation-delay:${delay}s">
+      <div class="tc-bar ${typeBar(item.type)}"></div>
+      <div class="tc-badges">
+        <span class="badge ${tbClass}">${tbLabel}</span>
+        <span class="badge ${ibClass}">${ibLabel}</span>
+        ${statusHtml}
+      </div>
+      <div class="tc-title">${item.title}</div>
+      <div class="tc-summary">${item.summary}</div>
+      ${flowHtml}
+      <div class="tc-foot">
+        <span class="tc-src">${item.source || ''}</span>
+        <span class="tc-stats">💬 ${item.comments||0} &nbsp; 👁 ${item.views||0}</span>
+        <span class="tc-src">${relTime(item.date)}</span>
+      </div>
+    </div>`;
+}
+
+function buildThread(topic, delay=0) {
+  const safeTitle = topic.title.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  return `
+    <div class="thread fade-in" style="animation-delay:${delay}s;cursor:pointer"
+      onclick="openTopic('${topic.id}','${safeTitle}',allNews.find(n=>n.id==='${topic.newsId}'))">
+      <div class="th-left">
+        <div class="th-dot" style="background:var(--transfer)"></div>
+        <div>
+          <div class="th-title">${topic.title}</div>
+          <div class="th-meta">
+            <span class="auth">AI Bot</span> · ${relTime(topic.date)}
+            ${topic.hot ? '<span class="hot-tag">🔥 HOT</span>' : ''}
+            ${topic.commentCount ? `<span style="color:var(--accent)">💬 ${topic.commentCount}</span>` : ''}
+          </div>
+        </div>
+      </div>
+      <div class="th-stats">
+        <div class="th-rep">${topic.replies||topic.commentCount||0}</div>
+        <div class="th-rlab">YANIT</div>
+      </div>
+    </div>`;
+}
+
+function renderAll() {
+  renderHero();
+  renderTransferCards();
+  renderSidebar();
+  renderTicker();
+  renderStats();
+  renderHomeThreads();
+}
+
+function renderHero() {
+  const top = allTransfers.filter(n => n.importance === 'high')[0] || allTransfers[0];
+  if (!top) return;
+  document.getElementById('featuredCard').innerHTML = `
+    <div class="breaking-badge"><span class="pulse"></span>Son Dakika</div>
+    <h2>${top.title.toUpperCase().replace(/(TRANSFER|GELIYOR|IMZALIYOR|KIRALIK)/, '<span class="hl">$1</span>')}</h2>
+    <div class="transfer-meta">
+      ${top.from_club ? `<div class="club-tag">${top.from_club} <span style="color:var(--transfer)">→</span> ${top.to_club||'?'}</div>` : ''}
+      ${top.fee ? `<div class="fee-pill">${top.fee}</div>` : ''}
+      <span class="t-time">${relTime(top.date)}</span>
+    </div>`;
+
+  const sides = allTransfers.slice(1, 4);
+  document.getElementById('sideTransfers').innerHTML = sides.map(t => `
+    <div class="mini-card">
+      <h4>${t.title}</h4>
+      <div class="mc">${t.from_club || ''} ${t.from_club && t.to_club ? '→' : ''} ${t.to_club || ''} ${t.fee ? '· '+t.fee : ''}</div>
+    </div>`).join('');
+}
+
+function renderTransferCards() {
+  const container = document.getElementById('transferCards');
+  const items = allTransfers.slice(0, 8);
+  if (!items.length) { container.innerHTML = '<div class="empty-state"><span class="empty-icon">📭</span><div class="empty-text">Henüz transfer haberi yok</div></div>'; return; }
+  container.innerHTML = items.map((t,i) => buildCard(t, i*0.06)).join('');
+}
+
+function renderSidebar() {
+  // Rumors
+  const rumors = allTransfers.slice(0, 5);
+  document.getElementById('sidebarRumors').innerHTML = rumors.map((t,i) => {
+    const pct = t.transfer_status === 'confirmed' ? 90 : t.transfer_status === 'loan' ? 55 : 40 + i*8;
+    const col = pct > 75 ? 'var(--transfer)' : pct > 50 ? 'var(--accent3)' : 'var(--accent2)';
+    return `<div class="rumor-item">
+      <div class="r-player">${t.player || t.title.slice(0,30)}</div>
+      <div class="r-clubs">${t.from_club||'—'} <span style="color:${col}">→</span> ${t.to_club||'—'}</div>
+      <div class="r-bar-wrap"><div class="r-bar" style="width:${pct}%;background:${col}"></div></div>
+    </div>`;
+  }).join('');
+
+  // News sidebar
+  const news = allNews.filter(n => n.type !== 'transfer').slice(0, 5);
+  document.getElementById('sidebarNews').innerHTML = news.map(n => `
+    <div class="news-item-w">
+      <div class="ni-sport">${n.type === 'match' ? '🏆 Maç' : n.type === 'injury' ? '🤕 Sakatlık' : '📰 ' + n.source}</div>
+      <div class="ni-title">${n.title}</div>
+      <div class="ni-time">${relTime(n.date)}</div>
+    </div>`).join('');
+}
+
+function renderTicker() {
+  const items = allTransfers.slice(0, 7);
+  if (!items.length) return;
+  const html = items.map(t => `<span class="t-item"><span class="t-dot"></span>${t.title}${t.fee ? ' | '+t.fee : ''}</span>`).join('');
+  document.getElementById('ticker').innerHTML = `<span class="t-label">🔴 SON DAKİKA</span>${html}<span class="t-label">🔴 SON DAKİKA</span>${html}`;
+}
+
+function renderStats() {
+  document.getElementById('statTransfer').textContent = stats.transfers || allTransfers.length || '—';
+  document.getElementById('statTotal').textContent    = stats.total     || allNews.length      || '—';
+  document.getElementById('statTopics').textContent   = stats.topics    || allTopics.length    || '—';
+  document.getElementById('swTotal').textContent      = stats.total     || allNews.length      || '—';
+  document.getElementById('swTransfer').textContent   = stats.transfers || allTransfers.length || '—';
+  document.getElementById('swTopics').textContent     = stats.topics    || allTopics.length    || '—';
+  if (stats.lastUpdate) {
+    document.getElementById('swUpdate').textContent = relTime(stats.lastUpdate);
+  }
+}
+
+function renderHomeThreads() {
+  const container = document.getElementById('homeThreads');
+  if (!allTopics.length) {
+    container.innerHTML = '<div class="empty-state"><span class="empty-icon">💬</span><div class="empty-text">Henüz forum konusu yok</div></div>';
+    return;
+  }
+  container.innerHTML = allTopics.slice(0,5).map((t,i) => buildThread(t, i*0.06)).join('');
+}
+
+function renderTransferPage(items) {
+  const c = document.getElementById('allTransferCards');
+  if (!items.length) { c.innerHTML = '<div class="empty-state"><span class="empty-icon">📭</span><div class="empty-text">Haber bulunamadı</div></div>'; return; }
+  c.innerHTML = items.map((t,i) => buildCard(t, i*0.05)).join('');
+}
+
+function renderForumPage(topics) {
+  const el = document.getElementById('forumTopicsList');
+  if (!el) return;
+  if (!topics.length) {
+    el.innerHTML = '<div class="empty-state"><span class="empty-icon">💬</span><div class="empty-text">Henüz AI konusu yok</div></div>';
+    return;
+  }
+  el.innerHTML = topics.slice(0,8).map((t,i) => buildThread(t, i*0.05)).join('');
+}
+
+function renderNewsPage(items) {
+  const c = document.getElementById('allNewsCards');
+  if (!items.length) { c.innerHTML = '<div class="empty-state"><span class="empty-icon">📰</span><div class="empty-text">Haber bulunamadı</div></div>'; return; }
+  c.innerHTML = items.map((t,i) => buildCard(t, i*0.05)).join('');
+}
+
+// ── FİLTRELER
+function filterCards(btn, filter) {
+  document.querySelectorAll('#homeFilters .ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const items = filter === 'all' ? allTransfers :
+    allTransfers.filter(t => t.transfer_status === filter);
+  const c = document.getElementById('transferCards');
+  c.innerHTML = items.slice(0,8).map((t,i) => buildCard(t, i*0.05)).join('');
+}
+
+function filterTransferPage(btn, filter) {
+  btn.closest('.filter-row').querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const items = filter === 'all' ? allTransfers :
+    filter === 'high' ? allTransfers.filter(t => t.importance === 'high') :
+    allTransfers.filter(t => t.transfer_status === filter);
+  renderTransferPage(items);
+}
+
+function filterNewsPage(btn, filter) {
+  btn.closest('.filter-row').querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const items = filter === 'all' ? allNews.filter(n => n.type !== 'transfer') :
+    allNews.filter(n => n.type === filter);
+  renderNewsPage(items);
+}
+
+// ── DEMO VERİSİ (backend yokken)
+function loadDemoData() {
+  const now = new Date().toISOString();
+  allTransfers = [
+    { id:'d1', title:'İsak Chelsea ile Anlaşmaya Vardı', summary:'Alexander Isak bu yaz Chelsea\'ye transfer olmak için görüşmeleri tamamladı. İki kulüp arasında ücret konusunda kısa bir mesafe kaldı.', type:'transfer', importance:'high', clubs:['Newcastle','Chelsea'], player:'Alexander Isak', fee:'€75M', from_club:'Newcastle', to_club:'Chelsea', transfer_status:'rumor', forum_title:'İsak Chelsea\'ye Giderse Newcastle\'ın Yerine Kim Gelir?', tags:['premier-lig','transfer'], source:'BBC Sport Demo', date:now, comments:512, views:3200 },
+    { id:'d2', title:'Salah Liverpool ile Sözleşme Yeniledi', summary:'Mohamed Salah, Liverpool ile 2026\'ya kadar sözleşmesini yeniledi.', type:'transfer', importance:'high', clubs:['Liverpool'], player:'Mohamed Salah', fee:null, from_club:null, to_club:'Liverpool', transfer_status:'confirmed', forum_title:'Salah\'ın Yeni Sözleşmesi Liverpool\'u Nasıl Etkiler?', tags:['liverpool','premier-lig'], source:'Goal TR Demo', date:now, comments:284, views:1800 },
+    { id:'d3', title:'Güler Fenerbahçe\'ye Kiralık İddiası', summary:'Arda Güler\'in Real Madrid\'den Fenerbahçe\'ye kiralanacağı iddia ediliyor. Kulüp henüz resmi açıklama yapmadı.', type:'transfer', importance:'high', clubs:['Real Madrid','Fenerbahçe'], player:'Arda Güler', fee:null, from_club:'Real Madrid', to_club:'Fenerbahçe', transfer_status:'rumor', forum_title:'Güler Fenerbahçe\'ye Gelirse Ne Değişir?', tags:['fenerbahçe','süper-lig'], source:'Fanatik Demo', date:now, comments:843, views:5100 },
+    { id:'d4', title:'Rashford Barcelona\'ya Gidebilir', summary:'Marcus Rashford\'un Barcelona ile temasa geçtiği öğrenildi. Man United oyuncuyu satmak istemiyor.', type:'transfer', importance:'medium', clubs:['Man United','Barcelona'], player:'Marcus Rashford', fee:'Serbest?', from_club:'Man United', to_club:'Barcelona', transfer_status:'rumor', forum_title:'Rashford Barcelona\'ya Yakar mı?', tags:['la-liga','transfer'], source:'Goal TR Demo', date:now, comments:398, views:2200 },
+  ];
+  allNews = [
+    ...allTransfers,
+    { id:'d5', title:'Şampiyonlar Ligi Finalinde Real Madrid Kazandı', summary:'Real Madrid, Şampiyonlar Ligi finalinde rakibini 2-1 mağlup ederek kupayı kazandı.', type:'match', importance:'high', clubs:['Real Madrid'], source:'BBC Sport Demo', date:now, comments:641, views:9800 },
+    { id:'d6', title:'Bellingham Sakatlıktan Döndü', summary:'Jude Bellingham, geçirdiği operasyonun ardından takım antrenmanlarına başladı.', type:'injury', importance:'medium', clubs:['Real Madrid'], player:'Jude Bellingham', source:'BBC Sport Demo', date:now, comments:120, views:1400 },
+  ];
+  allTopics = allTransfers.map(t => ({
+    id: t.id+'_topic', newsId: t.id, title: t.forum_title,
+    category:'transfer', replies: t.comments, views: t.views, date: t.date, hot: t.importance==='high'
+  }));
+  stats = { total: allNews.length, transfers: allTransfers.length, topics: allTopics.length, lastUpdate: now };
+  renderAll();
+}
+
+// ══════════════════════════════════════════════
+//  AUTH SİSTEMİ
+// ══════════════════════════════════════════════
+const AUTH_BASE = AUTH_BASE_RAW;
+let currentUser = null;
+let authToken   = localStorage.getItem('sa_token') || null;
+
+// ── Modal aç/kapat
+function openModal(tab = 'login') {
+  switchTab(tab);
+  document.getElementById('authModal').classList.add('open');
+  document.getElementById('authError').classList.remove('show');
+}
+function closeModal() { document.getElementById('authModal').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target.id === 'authModal') closeModal(); }
+
+// ── Tab geçiş
+function switchTab(tab) {
+  const isLogin = tab === 'login';
+  document.getElementById('tabLogin').classList.toggle('active', isLogin);
+  document.getElementById('tabRegister').classList.toggle('active', !isLogin);
+  document.getElementById('formLogin').style.display    = isLogin ? '' : 'none';
+  document.getElementById('formRegister').style.display = isLogin ? 'none' : '';
+  document.getElementById('modalSub').textContent = isLogin ? 'Hesabına giriş yap' : 'Yeni hesap oluştur';
+  document.getElementById('authError').classList.remove('show');
+}
+
+// ── Hata göster
+function showAuthError(msg) {
+  const el = document.getElementById('authError');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+// ── Giriş yap
+async function doLogin() {
+  const email    = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  if (!email || !password) return showAuthError('Tüm alanları doldur');
+  try {
+    const res  = await fetch(`${AUTH_BASE}/login`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      credentials:'include', body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json();
+    if (!data.success) return showAuthError(data.error);
+    authToken = data.token;
+    localStorage.setItem('sa_token', authToken);
+    setUser(data.user);
+    closeModal();
+  } catch { showAuthError('Bağlantı hatası — backend çalışıyor mu?'); }
+}
+
+// ── Kayıt ol
+async function doRegister() {
+  const username = document.getElementById('regUsername').value.trim();
+  const email    = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPassword').value;
+  if (!username || !email || !password) return showAuthError('Tüm alanları doldur');
+  try {
+    const res  = await fetch(`${AUTH_BASE}/register`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      credentials:'include', body: JSON.stringify({ username, email, password }),
+    });
+    const data = await res.json();
+    if (!data.success) return showAuthError(data.error);
+    authToken = data.token;
+    localStorage.setItem('sa_token', authToken);
+    setUser(data.user);
+    closeModal();
+  } catch { showAuthError('Bağlantı hatası — backend çalışıyor mu?'); }
+}
+
+// ── Google OAuth
+function doGoogleAuth() { window.location.href = `${AUTH_BASE}/google`; }
+
+// ── Çıkış
+async function doLogout() {
+  await fetch(`${AUTH_BASE}/logout`, { method:'POST', credentials:'include' }).catch(()=>{});
+  authToken = null;
+  localStorage.removeItem('sa_token');
+  currentUser = null;
+  renderNav();
+  showPage('home');
+}
+
+// ── Kullanıcıyı set et
+function setUser(user) {
+  currentUser = user;
+  renderNav();
+  // Google OAuth dönüşü kontrolü
+  const url = new URL(window.location.href);
+  if (url.searchParams.get('login') === 'success') {
+    window.history.replaceState({}, '', '/');
+  }
+}
+
+// ── Nav'ı güncelle
+function renderNav() {
+  const navRight = document.getElementById('navRight');
+  if (currentUser) {
+    // Admin kontrolü
+    const adminEmails = (window.ADMIN_EMAILS || '').split(',');
+    const isAdmin = adminEmails.includes(currentUser.email);
+
+    navRight.innerHTML = `
+      <button class="notif-bell" id="notifBell" onclick="toggleNotifPanel()" title="Bildirimler">
+        🔔<span class="notif-badge" id="notifBadge" style="display:none">0</span>
+      </button>
+      ${isAdmin ? `<button class="btn-sm btn-outline" onclick="showPage('admin')" style="border-color:rgba(255,61,0,.3);color:var(--accent2)">⚙ Admin</button>` : ''}
+      <div class="user-menu-wrap">
+        <button class="user-avatar-btn" onclick="toggleDropdown()">
+          <img src="${currentUser.avatar}" alt="av" class="u-avatar" onerror="this.src='https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(currentUser.username)}'">
+          <span class="u-name">${currentUser.username}</span>
+          <span style="color:var(--text3);font-size:.7rem">▾</span>
+        </button>
+        <div class="user-dropdown" id="userDropdown">
+          <button class="dd-item" onclick="showPage('profile');toggleDropdown()">👤 Profilim</button>
+          <button class="dd-item" onclick="loadNotifications();toggleDropdown()">🔔 Bildirimler</button>
+          <div class="dd-div"></div>
+          <button class="dd-item danger" onclick="doLogout()">↩ Çıkış Yap</button>
+        </div>
+      </div>`;
+
+    // Socket bağla
+    if (!socket) connectSocket();
+    else if (socket && currentUser) socket.emit('register', currentUser.id);
+    // Bildirim sayısını çek
+    loadNotifications();
+  } else {
+    navRight.innerHTML = `
+      <button class="btn-sm btn-outline" onclick="openModal('login')">Giriş</button>
+      <button class="btn-sm btn-primary" onclick="openModal('register')">Kayıt Ol</button>`;
+  }
+}
+
+function toggleDropdown() {
+  document.getElementById('userDropdown')?.classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.user-menu-wrap')) {
+    document.getElementById('userDropdown')?.classList.remove('open');
+  }
+});
+
+// ── Profil sayfası
+function showProfilePage() {
+  if (!currentUser) return openModal('login');
+  document.getElementById('profileAvatar').src  = currentUser.avatar || '';
+  document.getElementById('profileUsername').textContent = currentUser.username;
+  document.getElementById('profileClub').textContent     = currentUser.favoriteClub || '—';
+  document.getElementById('profileBio').textContent      = currentUser.bio || '';
+  document.getElementById('profileJoined').textContent   = 'Katıldı: ' + new Date(currentUser.joinedAt).toLocaleDateString('tr-TR');
+  document.getElementById('editUsername').value = currentUser.username || '';
+  document.getElementById('editBio').value      = currentUser.bio      || '';
+  document.getElementById('editClub').value     = currentUser.favoriteClub || '';
+}
+
+// Override showProfilePage to load follow + history
+const _origShowProfile = showProfilePage;
+window.showProfilePage = function() {
+  _origShowProfile();
+  loadFollows();
+  loadUserHistory();
+  // Hide password section for Google users
+  const pwCard = document.getElementById('pwChangeCard');
+  if (pwCard) pwCard.style.display = currentUser?.provider === 'google' ? 'none' : '';
+};
+
+async function saveProfile() {
+  if (!currentUser || !authToken) return;
+  const body = {
+    username    : document.getElementById('editUsername').value.trim(),
+    bio         : document.getElementById('editBio').value.trim(),
+    favoriteClub: document.getElementById('editClub').value.trim(),
+  };
+  try {
+    const res  = await fetch(`${AUTH_BASE}/profile`, {
+      method:'PUT', headers:{'Content-Type':'application/json','Authorization':`Bearer ${authToken}`},
+      credentials:'include', body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (data.success) {
+      setUser(data.user);
+      showProfilePage();
+      const ok = document.getElementById('saveOk');
+      ok.classList.add('show');
+      setTimeout(() => ok.classList.remove('show'), 3000);
+    }
+  } catch {}
+}
+
+// ── Beğen
+async function likePost(postId, btn) {
+  if (!currentUser) return openModal('login');
+  try {
+    const res  = await fetch(`${AUTH_BASE}/like/${postId}`, {
+      method:'POST', headers:{'Authorization':`Bearer ${authToken}`}, credentials:'include',
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.classList.toggle('liked', data.liked);
+      btn.textContent = data.liked ? '❤️' : '🤍';
+    }
+  } catch {}
+}
+
+// ── Sayfa geçişini override et
+const _origShowPage = showPage;
+window.showPage = function(name) {
+  if (name === 'admin' && !currentUser) return openModal('login');
+  _origShowPage(name);
+  if (name === 'profile') showProfilePage();
+  if (name === 'admin')   loadAdminStats();
+  if (name === 'search')     { loadTrending(); if(searchQuery) runSearch(); }
+  if (name === 'follow-feed') { loadFollowFeed(); }
+};
+
+// ── Nav link güncelle
+document.querySelectorAll('.nav-links a').forEach((a, i) => {
+  const pages = ['home','transfers','forum','news'];
+  a.onclick = () => showPage(pages[i]);
+});
+
+// ── Profil nav linki ekle (dinamik)
+const navLinks = document.querySelector('.nav-links');
+if (navLinks) {
+  const li = document.createElement('li');
+  li.innerHTML = `<a onclick="showPage('profile')">Profil</a>`;
+  navLinks.appendChild(li);
+}
+
+// ── Oturum kontrol
+async function checkSession() {
+  if (!authToken) return;
+  try {
+    const res  = await fetch(`${AUTH_BASE}/me`, {
+      headers:{'Authorization':`Bearer ${authToken}`}, credentials:'include',
+    });
+    const data = await res.json();
+    if (data.success) setUser(data.user);
+    else { authToken = null; localStorage.removeItem('sa_token'); }
+  } catch {}
+}
+
+// ── Google OAuth dönüşü
+if (new URL(window.location.href).searchParams.get('login') === 'success') {
+  checkSession();
+}
+
+// ══════════════════════════════════════════════
+//  SOCKET.IO — Gerçek Zamanlı Bağlantı
+// ══════════════════════════════════════════════
+let socket = null;
+
+function connectSocket() {
+  if (typeof io === 'undefined') return;
+  socket = io('http://localhost:3000', { transports: ['websocket','polling'] });
+
+  socket.on('connect', () => {
+    if (currentUser) socket.emit('register', currentUser.id);
+  });
+
+  socket.on('notif_count', (count) => updateNotifBadge(count));
+
+  socket.on('new_notif', (notif) => {
+    prependNotif(notif);
+    updateNotifBadge(notifs_unread + 1);
+  });
+
+  socket.on('breaking_transfer', (item) => {
+    // Flash ticker ile bildir
+    const ticker = document.getElementById('ticker');
+    if (ticker) {
+      const flash = `<span class="t-item" style="color:#fff;font-weight:900">🔴 SON DAKİKA: ${item.title}</span>`;
+      ticker.innerHTML = flash + ticker.innerHTML;
+    }
+  });
+
+  socket.on('new_comment', ({ topicId, comment }) => {
+    if (currentTopicId === topicId) {
+      appendComment(comment);
+      const cnt = document.getElementById('tmCommentCount');
+      if (cnt) {
+        const n = document.querySelectorAll('#tmCommentList .comment-item').length;
+        cnt.textContent = `YORUMLAR (${n})`;
+      }
+    }
+  });
+
+  socket.on('delete_comment', ({ topicId, commentId }) => {
+    if (currentTopicId === topicId) {
+      document.querySelector(`[data-cid="${commentId}"]`)?.remove();
+    }
+  });
+}
+
+// ══════════════════════════════════════════════
+//  BİLDİRİM SİSTEMİ
+// ══════════════════════════════════════════════
+let notifs_unread = 0;
+
+function updateNotifBadge(count) {
+  notifs_unread = count;
+  const badge = document.getElementById('notifBadge');
+  if (badge) {
+    badge.textContent = count > 0 ? (count > 9 ? '9+' : count) : '';
+    badge.style.display = count > 0 ? 'flex' : 'none';
+  }
+}
+
+function toggleNotifPanel() {
+  const panel = document.getElementById('notifPanel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) loadNotifications();
+}
+
+async function loadNotifications() {
+  if (!currentUser || !authToken) return;
+  try {
+    const res  = await fetch(`${API_BASE}/notifications`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (!data.success) return;
+    updateNotifBadge(data.unread);
+    renderNotifications(data.data);
+  } catch {}
+}
+
+function renderNotifications(list) {
+  const el = document.getElementById('notifList');
+  if (!list.length) { el.innerHTML = '<div class="notif-empty">🔔 Henüz bildirim yok</div>'; return; }
+  el.innerHTML = list.map(n => `
+    <div class="notif-item ${n.read ? '' : 'unread'}" onclick="readNotif('${n.id}', '${n.link||''}')">
+      ${!n.read ? '' : ''}
+      <div class="ni-content">
+        <div class="ni-title">${n.title}</div>
+        <div class="ni-body">${n.body}</div>
+        <div class="ni-time">${relTime(n.date)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function prependNotif(notif) {
+  const el = document.getElementById('notifList');
+  const empty = el.querySelector('.notif-empty');
+  if (empty) empty.remove();
+  const div = document.createElement('div');
+  div.className = 'notif-item unread';
+  div.innerHTML = `<div class="ni-content"><div class="ni-title">${notif.title}</div><div class="ni-body">${notif.body}</div><div class="ni-time">Az önce</div></div>`;
+  div.onclick = () => readNotif(notif.id, notif.link || '');
+  el.prepend(div);
+}
+
+async function readNotif(id, link) {
+  if (!authToken) return;
+  await fetch(`${API_BASE}/notifications/${id}/read`, {
+    method: 'PUT', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+  }).catch(() => {});
+  loadNotifications();
+  if (link && link !== 'null') { document.getElementById('notifPanel').classList.remove('open'); }
+}
+
+async function markAllRead() {
+  if (!authToken) return;
+  await fetch(`${API_BASE}/notifications/read`, {
+    method: 'PUT', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+  }).catch(() => {});
+  updateNotifBadge(0);
+  loadNotifications();
+}
+
+// Dışarı tıkla kapat
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#notifPanel') && !e.target.closest('.notif-bell')) {
+    document.getElementById('notifPanel')?.classList.remove('open');
+  }
+});
+
+// ══════════════════════════════════════════════
+//  YORUM SİSTEMİ
+// ══════════════════════════════════════════════
+let currentTopicId = null;
+let replyToId = null;
+
+async function openTopic(topicId, topicTitle, newsItem) {
+  currentTopicId = topicId;
+  replyToId = null;
+
+  document.getElementById('tmTitle').textContent = topicTitle;
+  document.getElementById('topicModal').classList.add('open');
+
+  // Haber özeti
+  const prev = document.getElementById('tmNewsPreview');
+  if (newsItem) {
+    prev.innerHTML = `<p><strong style="color:var(--text)">${newsItem.title}</strong><br>${newsItem.summary || ''}</p>`;
+  } else { prev.style.display = 'none'; }
+
+  // Kullanıcı avatarı
+  const av = document.getElementById('tmUserAv');
+  if (currentUser) {
+    av.src = currentUser.avatar || '';
+    document.getElementById('tmCommentForm').style.display = 'flex';
+  } else {
+    document.getElementById('tmCommentForm').style.display = 'none';
+  }
+
+  await loadComments(topicId);
+}
+
+function closeTopic() {
+  document.getElementById('topicModal').classList.remove('open');
+  currentTopicId = null;
+}
+function closeTopicOutside(e) {
+  if (e.target.id === 'topicModal') closeTopic();
+}
+
+async function loadComments(topicId) {
+  const list = document.getElementById('tmCommentList');
+  list.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--text3)">Yorumlar yükleniyor...</div>';
+  try {
+    const res  = await fetch(`${API_BASE}/comments/${topicId}`);
+    const data = await res.json();
+    document.getElementById('tmCommentCount').textContent = `YORUMLAR (${data.count || 0})`;
+    if (!data.data?.length) {
+      list.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--text3)">İlk yorumu sen yap!</div>';
+      return;
+    }
+    // Ana yorumlar + yanıtlar
+    const roots = data.data.filter(c => !c.parentId);
+    const children = data.data.filter(c => c.parentId);
+    list.innerHTML = '';
+    roots.forEach(c => {
+      list.appendChild(createCommentEl(c));
+      children.filter(ch => ch.parentId === c.id).forEach(ch => {
+        const el = createCommentEl(ch);
+        el.classList.add('reply');
+        list.appendChild(el);
+      });
+    });
+  } catch {
+    list.innerHTML = '<div style="padding:2rem;text-align:center;color:var(--text3)">Yorumlar yüklenemedi</div>';
+  }
+}
+
+function createCommentEl(comment) {
+  const div = document.createElement('div');
+  div.className = 'comment-item';
+  div.dataset.cid = comment.id;
+  const canEdit = currentUser?.id === comment.userId;
+  div.innerHTML = `
+    <div class="ci-header">
+      <img src="${comment.avatar||''}" alt="av" class="ci-av" onerror="this.src='https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(comment.username)}'">
+      <span class="ci-name">${comment.username}</span>
+      ${comment.edited ? '<span class="ci-edited">(düzenlendi)</span>' : ''}
+      <span class="ci-time">${relTime(comment.date)}</span>
+    </div>
+    <div class="ci-text">${comment.text}</div>
+    <div class="ci-actions">
+      <button class="ci-btn" onclick="likeCommentBtn('${comment.id}', this)">🤍 ${comment.likes||0}</button>
+      ${currentUser ? `<button class="ci-btn" onclick="setReply('${comment.id}','${comment.username}')">↩ Yanıtla</button>` : ''}
+      ${canEdit ? `<button class="ci-btn" onclick="editCommentBtn('${comment.id}','${comment.topicId||currentTopicId}',this)">✏️ Düzenle</button>` : ''}
+      ${canEdit ? `<button class="ci-btn danger" onclick="deleteCommentBtn('${comment.id}')">🗑 Sil</button>` : ''}
+    </div>`;
+  return div;
+}
+
+function appendComment(comment) {
+  const list = document.getElementById('tmCommentList');
+  const empty = list.querySelector('[style*="İlk yorumu"]');
+  if (empty) empty.remove();
+  list.appendChild(createCommentEl(comment));
+  list.scrollTop = list.scrollHeight;
+}
+
+function setReply(commentId, username) {
+  replyToId = commentId;
+  const ta = document.getElementById('tmCommentText');
+  ta.placeholder = `@${username} yanıtlıyorsun...`;
+  ta.focus();
+}
+
+async function submitComment() {
+  if (!currentUser) return openModal('login');
+  const text = document.getElementById('tmCommentText').value.trim();
+  if (!text) return;
+  try {
+    const res  = await fetch(`${API_BASE}/comments/${currentTopicId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      credentials: 'include',
+      body: JSON.stringify({ text, parentId: replyToId }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('tmCommentText').value = '';
+      document.getElementById('tmCommentText').placeholder = 'Görüşünü yaz...';
+      replyToId = null;
+      if (!socket) appendComment(data.data); // socket yoksa manuel ekle
+    }
+  } catch {}
+}
+
+async function likeCommentBtn(commentId, btn) {
+  if (!currentUser) return openModal('login');
+  try {
+    const res  = await fetch(`${API_BASE}/comments/${currentTopicId}/${commentId}/like`, {
+      method: 'POST', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.classList.toggle('liked', data.liked);
+      btn.textContent = `${data.liked ? '❤️' : '🤍'} ${data.likes}`;
+    }
+  } catch {}
+}
+
+async function deleteCommentBtn(commentId) {
+  if (!confirm('Yorumu silmek istediğine emin misin?')) return;
+  try {
+    await fetch(`${API_BASE}/comments/${currentTopicId}/${commentId}`, {
+      method: 'DELETE', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    document.querySelector(`[data-cid="${commentId}"]`)?.remove();
+  } catch {}
+}
+
+async function editCommentBtn(commentId, topicId, btn) {
+  const item = btn.closest('.comment-item');
+  const textEl = item.querySelector('.ci-text');
+  const old = textEl.textContent;
+  textEl.innerHTML = `<textarea class="comment-textarea" style="min-height:60px">${old}</textarea>
+    <button class="comment-submit" style="margin-top:.4rem" onclick="saveEdit('${commentId}','${topicId}',this)">Kaydet</button>`;
+}
+
+async function saveEdit(commentId, topicId, btn) {
+  const newText = btn.previousElementSibling.value.trim();
+  try {
+    const res  = await fetch(`${API_BASE}/comments/${topicId}/${commentId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      credentials: 'include', body: JSON.stringify({ text: newText }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      const item = btn.closest('.comment-item');
+      item.querySelector('.ci-text').innerHTML = newText;
+      const edited = item.querySelector('.ci-edited');
+      if (!edited) {
+        item.querySelector('.ci-name').insertAdjacentHTML('afterend','<span class="ci-edited">(düzenlendi)</span>');
+      }
+    }
+  } catch {}
+}
+
+// ══════════════════════════════════════════════
+//  ADMİN PANELİ
+// ══════════════════════════════════════════════
+function adminNav(btn, section) {
+  document.querySelectorAll('.admin-nav-item').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(section).classList.add('active');
+  if (section === 'admin-users') loadAdminUsers();
+  if (section === 'admin-news')  loadAdminNews();
+  if (section === 'admin-dashboard') loadAdminStats();
+}
+
+async function loadAdminStats() {
+  try {
+    const res  = await fetch('/admin/stats', {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (!data.success) return;
+    const d = data.data;
+    document.getElementById('as-users').textContent  = d.users;
+    document.getElementById('as-news').textContent   = d.news;
+    document.getElementById('as-topics').textContent = d.forumTopics;
+    document.getElementById('as-online').textContent = d.onlineNow;
+  } catch {}
+}
+
+async function loadAdminUsers() {
+  const tbody = document.getElementById('adminUsersBody');
+  tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text3)">Yükleniyor...</td></tr>';
+  try {
+    const res  = await fetch('/admin/users', {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (!data.success) { tbody.innerHTML = `<tr><td colspan="5" style="color:var(--accent2)">${data.error}</td></tr>`; return; }
+    tbody.innerHTML = data.data.map(u => `
+      <tr>
+        <td style="display:flex;align-items:center;gap:.5rem">
+          <img src="${u.avatar}" style="width:24px;height:24px;border-radius:50%" onerror="this.style.display='none'">
+          <strong style="color:var(--text)">${u.username}</strong>
+        </td>
+        <td>${u.email}</td>
+        <td>${new Date(u.joinedAt).toLocaleDateString('tr-TR')}</td>
+        <td><span style="color:${u.provider==='google'?'var(--accent)':'var(--text2)'}">${u.provider}</span></td>
+        <td><button class="admin-del-btn" onclick="adminDelUser('${u.id}')">Sil</button></td>
+      </tr>`).join('');
+  } catch {}
+}
+
+async function loadAdminNews() {
+  const tbody = document.getElementById('adminNewsBody');
+  tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text3)">Yükleniyor...</td></tr>';
+  try {
+    const res  = await fetch('/admin/news', {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (!data.success) return;
+    tbody.innerHTML = data.data.map(n => `
+      <tr>
+        <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text)">${n.title}</td>
+        <td><span class="badge ${n.type==='transfer'?'b-transfer':n.type==='match'?'b-match':'b-general'}">${n.type}</span></td>
+        <td style="color:var(--text3)">${n.source}</td>
+        <td style="color:var(--text3)">${relTime(n.date)}</td>
+        <td><button class="admin-del-btn" onclick="adminDelNews('${n.id}')">Sil</button></td>
+      </tr>`).join('');
+  } catch {}
+}
+
+async function adminDelUser(id) {
+  if (!confirm('Kullanıcıyı silmek istediğine emin misin?')) return;
+  await fetch(`/admin/users/${id}`, {
+    method: 'DELETE', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+  }).catch(() => {});
+  loadAdminUsers();
+}
+
+async function adminDelNews(id) {
+  if (!confirm('Haberi silmek istediğine emin misin?')) return;
+  await fetch(`/admin/news/${id}`, {
+    method: 'DELETE', headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+  }).catch(() => {});
+  loadAdminNews();
+}
+
+async function adminAddNews() {
+  const text = document.getElementById('adminNewsText').value.trim();
+  if (!text) return;
+  const status = document.getElementById('adminAddStatus');
+  status.textContent = '⏳ Analiz ediliyor...';
+  try {
+    const res  = await fetch('/admin/news', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      credentials: 'include', body: JSON.stringify({ text }),
+    });
+    const data = await res.json();
+    status.textContent = data.success ? '✅ Eklendi!' : '❌ ' + data.error;
+    if (data.success) { document.getElementById('adminNewsText').value = ''; fetchData(); }
+  } catch { status.textContent = '❌ Bağlantı hatası'; }
+}
+
+async function sendBroadcast() {
+  const title = document.getElementById('bcTitle').value.trim();
+  const body  = document.getElementById('bcBody').value.trim();
+  const link  = document.getElementById('bcLink').value.trim();
+  if (!title || !body) return;
+  const status = document.getElementById('bcStatus');
+  try {
+    const res  = await fetch('/admin/broadcast', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      credentials: 'include', body: JSON.stringify({ title, body, link }),
+    });
+    const data = await res.json();
+    status.textContent = data.success ? '✅ ' + data.message : '❌ ' + data.error;
+  } catch { status.textContent = '❌ Bağlantı hatası'; }
+}
+
+
+// ══════════════════════════════════════════════
+//  i18n — ÇOK DİLLİ DESTEK
+// ══════════════════════════════════════════════
+
+const I18N = {
+  tr: {
+    nav_home:'Ana Sayfa', nav_transfers:'Transferler', nav_forum:'Forum', nav_news:'Haberler',
+    breaking:'Son Dakika', transfer_news:'Transfer Haberleri', hot_topics:'Sıcak Forum Konuları',
+    sport_news:'Spor Haberleri', all:'Tümü', official:'Resmi', rumor:'İddia',
+    loan:'Kiralık', see_all:'Tümünü Gör', replies:'YANIT', login:'Giriş', register:'Kayıt Ol',
+    refresh:'↺ Yenile', type_transfer:'⚽ Transfer', type_match:'🏆 Maç',
+    type_injury:'🤕 Sakatlık', type_general:'📰 Genel',
+    imp_high:'🔴 Önemli', imp_medium:'🟡 Orta', imp_low:'⚪ Düşük',
+    confirmed:'✓ Kesinleşti', status_rumor:'⚡ İddia', status_loan:'↩ Kiralık',
+    trending:'GÜNDEM TRANSFERLER', latest_news:'SON HABERLER', forum_status:'FORUM DURUMU',
+    total_news:'Toplam Haber', transfer_count:'Transfer Haberi', topic_count:'Forum Konusu',
+    last_update:'Son Güncelleme',
+    geo_msg:'konumuna göre dil algılandı', geo_accept:'Kabul Et', geo_dismiss:'Kapat',
+  },
+  es: {
+    nav_home:'Inicio', nav_transfers:'Fichajes', nav_forum:'Foro', nav_news:'Noticias',
+    breaking:'Última Hora', transfer_news:'Noticias de Fichajes', hot_topics:'Temas Calientes del Foro',
+    sport_news:'Noticias Deportivas', all:'Todos', official:'Oficial', rumor:'Rumor',
+    loan:'Préstamo', see_all:'Ver Todo', replies:'RESP.', login:'Entrar', register:'Registrarse',
+    refresh:'↺ Actualizar', type_transfer:'⚽ Fichaje', type_match:'🏆 Partido',
+    type_injury:'🤕 Lesión', type_general:'📰 General',
+    imp_high:'🔴 Importante', imp_medium:'🟡 Medio', imp_low:'⚪ Bajo',
+    confirmed:'✓ Confirmado', status_rumor:'⚡ Rumor', status_loan:'↩ Préstamo',
+    trending:'FICHAJES EN TENDENCIA', latest_news:'ÚLTIMAS NOTICIAS', forum_status:'ESTADO DEL FORO',
+    total_news:'Total Noticias', transfer_count:'Fichajes', topic_count:'Temas del Foro',
+    last_update:'Última Actualización',
+    geo_msg:'idioma detectado por ubicación', geo_accept:'Aceptar', geo_dismiss:'Cerrar',
+  },
+  zh: {
+    nav_home:'首页', nav_transfers:'转会', nav_forum:'论坛', nav_news:'新闻',
+    breaking:'突发新闻', transfer_news:'转会新闻', hot_topics:'热门论坛话题',
+    sport_news:'体育新闻', all:'全部', official:'官方', rumor:'传言',
+    loan:'租借', see_all:'查看全部', replies:'回复', login:'登录', register:'注册',
+    refresh:'↺ 刷新', type_transfer:'⚽ 转会', type_match:'🏆 比赛',
+    type_injury:'🤕 伤病', type_general:'📰 综合',
+    imp_high:'🔴 重要', imp_medium:'🟡 中等', imp_low:'⚪ 一般',
+    confirmed:'✓ 确认', status_rumor:'⚡ 传言', status_loan:'↩ 租借',
+    trending:'热门转会', latest_news:'最新新闻', forum_status:'论坛状态',
+    total_news:'新闻总数', transfer_count:'转会新闻', topic_count:'论坛话题',
+    last_update:'最后更新',
+    geo_msg:'已根据您的位置检测语言', geo_accept:'接受', geo_dismiss:'关闭',
+  },
+  ar: {
+    nav_home:'الرئيسية', nav_transfers:'الانتقالات', nav_forum:'المنتدى', nav_news:'الأخبار',
+    breaking:'عاجل', transfer_news:'أخبار الانتقالات', hot_topics:'أكثر المواضيع نشاطاً',
+    sport_news:'الأخبار الرياضية', all:'الكل', official:'رسمي', rumor:'إشاعة',
+    loan:'إعارة', see_all:'عرض الكل', replies:'رد', login:'تسجيل الدخول', register:'إنشاء حساب',
+    refresh:'↺ تحديث', type_transfer:'⚽ انتقال', type_match:'🏆 مباراة',
+    type_injury:'🤕 إصابة', type_general:'📰 عام',
+    imp_high:'🔴 مهم', imp_medium:'🟡 متوسط', imp_low:'⚪ عادي',
+    confirmed:'✓ مؤكد', status_rumor:'⚡ إشاعة', status_loan:'↩ إعارة',
+    trending:'الانتقالات الرائجة', latest_news:'آخر الأخبار', forum_status:'حالة المنتدى',
+    total_news:'إجمالي الأخبار', transfer_count:'أخبار الانتقالات', topic_count:'مواضيع المنتدى',
+    last_update:'آخر تحديث',
+    geo_msg:'تم اكتشاف اللغة حسب موقعك', geo_accept:'قبول', geo_dismiss:'إغلاق',
+  },
+  en: {
+    nav_home:'Home', nav_transfers:'Transfers', nav_forum:'Forum', nav_news:'News',
+    breaking:'Breaking', transfer_news:'Transfer News', hot_topics:'Hot Forum Topics',
+    sport_news:'Sports News', all:'All', official:'Official', rumor:'Rumor',
+    loan:'Loan', see_all:'See All', replies:'REPLIES', login:'Login', register:'Sign Up',
+    refresh:'↺ Refresh', type_transfer:'⚽ Transfer', type_match:'🏆 Match',
+    type_injury:'🤕 Injury', type_general:'📰 General',
+    imp_high:'🔴 High', imp_medium:'🟡 Medium', imp_low:'⚪ Low',
+    confirmed:'✓ Confirmed', status_rumor:'⚡ Rumor', status_loan:'↩ Loan',
+    trending:'TRENDING TRANSFERS', latest_news:'LATEST NEWS', forum_status:'FORUM STATUS',
+    total_news:'Total News', transfer_count:'Transfer News', topic_count:'Forum Topics',
+    last_update:'Last Update',
+    geo_msg:'language detected from location', geo_accept:'Accept', geo_dismiss:'Dismiss',
+  },
+};
+
+let currentLang = localStorage.getItem('sa_lang') || 'en';
+let geoToastShown = false;
+
+function t(key) { return (I18N[currentLang] || I18N.en)[key] || key; }
+
+function applyLang(lang, fromGeo = false) {
+  currentLang = lang;
+  localStorage.setItem('sa_lang', lang);
+
+  // RTL
+  const isRTL = lang === 'ar';
+  document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('lang', lang);
+
+  // Dil butonlarını güncelle
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.onclick?.toString().includes(`'${lang}'`));
+  });
+
+  // data-i18n elementlerini güncelle
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (I18N[lang]?.[key]) el.textContent = I18N[lang][key];
+  });
+
+  // Ticker ve section başlıklarını yeniden çiz
+  renderAll();
+
+  // Arka planda o dil için haber yenile (isteğe bağlı)
+  if (isConnected) {
+    fetch(`${API_BASE.replace('/api','/api')}/news?lang=${lang}&limit=40`)
+      .then(r => r.json())
+      .then(d => { if (d.success) { allNews = d.data; allTransfers = d.data.filter(n=>n.type==='transfer'); renderAll(); } })
+      .catch(() => {});
+  }
+}
+
+function setLang(lang) { applyLang(lang, false); }
+
+// Coğrafi konum tespiti
+async function detectGeoLang() {
+  // 1. Önce tarayıcı dil tercihine bak
+  const browserLang = navigator.language?.split('-')[0]?.toLowerCase();
+  const SUPPORTED = ['tr','es','zh','ar','en'];
+  let detectedLang = SUPPORTED.includes(browserLang) ? browserLang : null;
+
+  // 2. Kaydedilmiş dil varsa onu kullan, sorma
+  if (localStorage.getItem('sa_lang')) {
+    applyLang(localStorage.getItem('sa_lang'));
+    return;
+  }
+
+  // 3. IP/ülke bazlı tespit — ipapi.co ücretsiz API
+  try {
+    const res  = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(4000) });
+    const data = await res.json();
+    const cc   = data.country_code || '';
+
+    // Backend'e sor
+    const localeRes  = await fetch(`${API_BASE.replace('/api','')}/api/locale?cc=${cc}`);
+    const localeData = await localeRes.json();
+    if (localeData.success) detectedLang = localeData.data.lang;
+
+    // Eğer tespit edilen dil mevcut dil değilse toast göster
+    if (detectedLang && detectedLang !== currentLang && !geoToastShown) {
+      geoToastShown = true;
+      showGeoToast(detectedLang, data.country_name || cc, localeData.data.flag || '🌍');
+      return; // kullanıcı kabul edene kadar bekle
+    }
+  } catch {}
+
+  // Tespit ettikten sonra uygula
+  if (detectedLang) applyLang(detectedLang, true);
+}
+
+function showGeoToast(lang, countryName, flag) {
+  const meta = { tr:{name:'Türkçe'}, es:{name:'Español'}, zh:{name:'中文'}, ar:{name:'العربية'}, en:{name:'English'} };
+  const langName = meta[lang]?.name || lang.toUpperCase();
+  const div = document.createElement('div');
+  div.className = 'geo-toast';
+  div.id = 'geoToast';
+  div.innerHTML = `
+    <span class="geo-flag">${flag}</span>
+    <span><strong>${countryName}</strong> — ${langName} ${t('geo_msg')}</span>
+    <button class="geo-accept" onclick="acceptGeoLang('${lang}')">${t('geo_accept')}</button>
+    <span class="geo-dismiss" onclick="dismissGeoToast()">✕</span>`;
+  document.body.appendChild(div);
+  setTimeout(dismissGeoToast, 12000);
+}
+
+function acceptGeoLang(lang) { dismissGeoToast(); applyLang(lang, true); }
+function dismissGeoToast() { document.getElementById('geoToast')?.remove(); }
+
+
+// ══════════════════════════════════════════════════════
+//  ARAMA SİSTEMİ — Frontend
+// ══════════════════════════════════════════════════════
+
+let searchQuery      = '';
+let searchFilter     = 'all';
+let searchSort       = 'relevance';
+let searchPage       = 1;
+let searchDebounceId = null;
+let trendingData     = null;
+
+// ── Nav dropdown: anlık fuzzy öneri (istemci tarafı, backend lazım değil)
+function navSearchInput(q) {
+  clearTimeout(searchDebounceId);
+  if (q.length < 2) { hideSearchDropdown(); return; }
+  searchDebounceId = setTimeout(() => fetchNavSuggestions(q), 220);
+}
+
+async function fetchNavSuggestions(q) {
+  const dd = document.getElementById('searchDropdown');
+  if (!isConnected) {
+    // Demo: yerel arama
+    const hits = allNews
+      .filter(n => n.title?.toLowerCase().includes(q.toLowerCase()) ||
+                   n.player?.toLowerCase().includes(q.toLowerCase()))
+      .slice(0, 5);
+    renderNavDropdown(q, hits);
+    return;
+  }
+  try {
+    const res  = await fetch(`${API_BASE}/search?q=${encodeURIComponent(q)}&limit=5`);
+    const data = await res.json();
+    renderNavDropdown(q, data.data || []);
+  } catch { hideSearchDropdown(); }
+}
+
+function renderNavDropdown(q, items) {
+  const dd = document.getElementById('searchDropdown');
+  if (!items.length) { hideSearchDropdown(); return; }
+  const re  = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  const esc = s => (s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const hl  = s => esc(s).replace(re,'<span class="sd-match">$1</span>');
+
+  const players = items.filter(n => n.player).map(n => n.player);
+  const clubs   = [...new Set(items.flatMap(n => n.clubs||[]))];
+
+  let html = '';
+
+  if (players.length) {
+    html += `<div class="sd-section-label">👤 Oyuncu</div>`;
+    [...new Set(players)].slice(0,3).forEach(p => {
+      html += `<div class="sd-item" onclick="goToSearch('${p.replace(/'/,"\\'")}')" >
+        <span class="sd-icon">⚽</span><span>${hl(p)}</span><span class="sd-type">oyuncu</span></div>`;
+    });
+  }
+  if (clubs.length) {
+    html += `<div class="sd-section-label">🏟 Kulüp</div>`;
+    clubs.slice(0,3).forEach(c => {
+      html += `<div class="sd-item" onclick="goToSearch('${c.replace(/'/,"\\'")}')" >
+        <span class="sd-icon">🛡</span><span>${hl(c)}</span><span class="sd-type">kulüp</span></div>`;
+    });
+  }
+  html += `<div class="sd-section-label">📰 Haber</div>`;
+  items.slice(0,4).forEach(n => {
+    const typeIcon = {transfer:'⚽',match:'🏆',injury:'🤕',general:'📰'}[n.type]||'📰';
+    html += `<div class="sd-item" onclick="goToSearch('${(n.title||'').slice(0,30).replace(/'/,"\\'")}')" >
+      <span class="sd-icon">${typeIcon}</span><span>${hl((n.title||'').slice(0,50))}</span>
+      <span class="sd-type">${n.source||''}</span></div>`;
+  });
+
+  dd.innerHTML = html;
+  dd.classList.add('open');
+}
+
+function showSearchDropdown() {
+  const v = document.getElementById('navSearchInput')?.value || '';
+  if (v.length >= 2) fetchNavSuggestions(v);
+}
+function hideSearchDropdown() {
+  document.getElementById('searchDropdown')?.classList.remove('open');
+}
+
+function goToSearch(q) {
+  hideSearchDropdown();
+  document.getElementById('navSearchInput').value = '';
+  showPage('search');
+  document.getElementById('searchPageInput').value = q;
+  searchQuery = q;
+  searchPage  = 1;
+  runSearch();
+}
+
+// ── Tam arama sayfası
+function debouncedSearch(q) {
+  clearTimeout(searchDebounceId);
+  if (q.length < 2) return;
+  searchDebounceId = setTimeout(() => {
+    searchQuery = q;
+    searchPage  = 1;
+    runSearch();
+  }, 400);
+}
+
+function setSearchFilter(btn, filter) {
+  document.querySelectorAll('#searchFilters .sf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  searchFilter = filter;
+  searchPage   = 1;
+  if (searchQuery) runSearch();
+}
+
+function setSort(btn, sort) {
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  searchSort = sort;
+  if (searchQuery) runSearch();
+}
+
+async function runSearch() {
+  const q = (document.getElementById('searchPageInput')?.value || searchQuery).trim();
+  if (!q || q.length < 2) return;
+  searchQuery = q;
+
+  const cards    = document.getElementById('searchResultCards');
+  const meta     = document.getElementById('resultsMeta');
+  const aiBox    = document.getElementById('aiSummaryBox');
+  const aiText   = document.getElementById('aiSummaryText');
+  const metaText = document.getElementById('resultsMetaText');
+  const pagination = document.getElementById('searchPagination');
+
+  // Loading state
+  cards.innerHTML = `<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>`;
+  meta.style.display  = 'none';
+  aiBox.style.display = 'none';
+  pagination.innerHTML = '';
+
+  // AI özet loading göster
+  aiBox.style.display = 'flex';
+  aiText.innerHTML = `<div class="ai-loading"><div class="ai-spinner"></div>Claude analiz ediyor...</div>`;
+
+  try {
+    const params = new URLSearchParams({
+      q, limit: 12, page: searchPage, ai: 1,
+    });
+    if (searchFilter !== 'all') params.set('type', searchFilter);
+    if (currentLang) params.set('lang', currentLang);
+
+    let results;
+    if (isConnected) {
+      const res  = await fetch(`${API_BASE}/search?${params}`);
+      results    = await res.json();
+    } else {
+      // Offline: istemci tarafı fuzzy arama
+      results = clientSideSearch(q, searchFilter, searchPage, 12);
+    }
+
+    if (!results.success) throw new Error(results.error);
+
+    // AI özet
+    if (results.aiSummary) {
+      aiText.innerHTML = results.aiSummary;
+    } else {
+      aiBox.style.display = 'none';
+    }
+
+    // Meta
+    meta.style.display = 'flex';
+    metaText.innerHTML = `<strong>${results.total}</strong> sonuç — "<strong>${q}</strong>"`;
+
+    // Öneriler
+    if (results.suggestions?.length && results.total === 0) {
+      const sugg = results.suggestions.map(s =>
+        `<span class="tag-chip" onclick="goToSearch('${s.label}')">${s.label}</span>`
+      ).join('');
+      metaText.innerHTML += ` &nbsp; Öneri: ${sugg}`;
+    }
+
+    // Kartlar
+    const likedPosts = currentUser ? (JSON.parse(localStorage.getItem('sa_liked')||'[]')) : [];
+    if (!results.data?.length) {
+      cards.innerHTML = `
+        <div class="no-results" style="grid-column:1/-1">
+          <span class="nr-icon">🔍</span>
+          <div class="nr-text">"${q}" için sonuç bulunamadı</div>
+          <div class="nr-sub">Farklı anahtar kelimeler veya filtreler deneyin</div>
+        </div>`;
+    } else {
+      // Sıralama
+      let sorted = [...results.data];
+      if (searchSort === 'date')   sorted.sort((a,b)=>new Date(b.date)-new Date(a.date));
+      if (searchSort === 'likes')  sorted.sort((a,b)=>(b.likes||0)-(a.likes||0));
+
+      cards.innerHTML = sorted.map((n,i) => highlightCard(n, q, i * 0.05)).join('');
+    }
+
+    // Sayfalama
+    renderPagination(results.pages || 1, results.page || 1);
+
+  } catch (err) {
+    cards.innerHTML = `<div class="no-results" style="grid-column:1/-1">
+      <span class="nr-icon">⚠️</span>
+      <div class="nr-text">Arama yapılamadı</div>
+      <div class="nr-sub">${err.message}</div>
+    </div>`;
+    aiBox.style.display = 'none';
+    meta.style.display  = 'none';
+  }
+}
+
+// İstemci tarafı fuzzy arama (backend yokken)
+function clientSideSearch(q, filter, page, limit) {
+  const ql = q.toLowerCase();
+  let pool = allNews.filter(n =>
+    (n.title||'').toLowerCase().includes(ql) ||
+    (n.player||'').toLowerCase().includes(ql) ||
+    (n.clubs||[]).some(c=>c.toLowerCase().includes(ql)) ||
+    (n.summary||'').toLowerCase().includes(ql)
+  );
+  if (filter !== 'all') pool = pool.filter(n => n.type === filter);
+  const total = pool.length;
+  const start = (page-1)*limit;
+  return { success:true, total, page, pages:Math.ceil(total/limit), data: pool.slice(start,start+limit), aiSummary:null, suggestions:[] };
+}
+
+// Arama terimi vurgulama ile kart
+function highlightCard(item, q, delay=0) {
+  const re  = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  const esc = s => (s||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  const hl  = s => esc(s).replace(re,'<span class="highlight">$1</span>');
+
+  const typeBar = {transfer:'bar-transfer',match:'bar-match',injury:'bar-injury',general:'bar-general'}[item.type]||'bar-general';
+  const typeBadge = {transfer:'b-transfer ⚽ Transfer',match:'b-match 🏆 Maç',injury:'b-injury 🤕 Sakatlık',general:'b-general 📰 Genel'}[item.type]||'b-general 📰';
+  const tb = typeBadge.split(' '), tbClass=tb[0], tbLabel=tb.slice(1).join(' ');
+
+  const flowHtml = (item.from_club && item.to_club)
+    ? `<div class="tf-flow"><span class="tf-from">${esc(item.from_club)}</span><span class="tf-arr">→</span><span class="tf-to">${esc(item.to_club)}</span>${item.fee?`<span class="tf-fee">${esc(item.fee)}</span>`:''}</div>` : '';
+
+  return `
+    <div class="t-card fade-in" style="animation-delay:${delay}s">
+      <div class="tc-bar ${typeBar}"></div>
+      <div class="tc-badges">
+        <span class="badge ${tbClass}">${tbLabel}</span>
+        ${item._score!==undefined ? `<span class="badge" style="background:rgba(0,212,255,.08);color:var(--accent);border:1px solid rgba(0,212,255,.2)">🎯 ${(1-item._score).toFixed(0)*100||95}%</span>` : ''}
+      </div>
+      <div class="tc-title">${hl(item.title)}</div>
+      <div class="tc-summary">${hl((item.summary||'').slice(0,120))}${item.summary?.length>120?'...':''}</div>
+      ${flowHtml}
+      <div class="tc-foot">
+        <span class="tc-src">${esc(item.source||'')}</span>
+        <span class="tc-stats">💬 ${item.commentCount||0}</span>
+        <span class="tc-src">${relTime(item.date)}</span>
+      </div>
+    </div>`;
+}
+
+// Sayfalama
+function renderPagination(pages, current) {
+  const el = document.getElementById('searchPagination');
+  if (pages <= 1) { el.innerHTML=''; return; }
+  let html = `<button class="pg-btn" onclick="goSearchPage(${current-1})" ${current<=1?'disabled':''}>‹</button>`;
+  for (let i = 1; i <= pages; i++) {
+    if (pages > 7 && Math.abs(i - current) > 2 && i !== 1 && i !== pages) {
+      if (i === 2 || i === pages-1) html += `<span style="color:var(--text3);padding:0 .25rem">…</span>`;
+      continue;
+    }
+    html += `<button class="pg-btn ${i===current?'active':''}" onclick="goSearchPage(${i})">${i}</button>`;
+  }
+  html += `<button class="pg-btn" onclick="goSearchPage(${current+1})" ${current>=pages?'disabled':''}>›</button>`;
+  el.innerHTML = html;
+}
+
+function goSearchPage(p) {
+  searchPage = p;
+  runSearch();
+  document.querySelector('.search-page-bar')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── Trending sidebar yükleme
+async function loadTrending() {
+  try {
+    const url  = isConnected
+      ? `${API_BASE}/search/trending?lang=${currentLang||'en'}`
+      : null;
+    let data;
+    if (url) {
+      const res = await fetch(url);
+      data = (await res.json()).data;
+    } else {
+      // Yerel
+      data = {
+        trending: allNews.slice(0,6).map(n=>({id:n.id,title:n.title,type:n.type,player:n.player,clubs:n.clubs})),
+        players : [...new Set(allNews.map(n=>n.player).filter(Boolean))].slice(0,8).map(p=>({name:p,count:1,type:'player'})),
+        clubs   : [...new Set(allNews.flatMap(n=>n.clubs||[]))].slice(0,8).map(c=>({name:c,count:1,type:'club'})),
+      };
+    }
+    trendingData = data;
+    renderTrending(data);
+  } catch {}
+}
+
+function renderTrending(data) {
+  // Gündem
+  const ti = document.getElementById('trendingItems');
+  if (ti && data.trending) {
+    ti.innerHTML = data.trending.map((n,i) => `
+      <div class="trend-item" onclick="goToSearch('${(n.player||n.title||'').replace(/'/,"\\'").slice(0,40)}')">
+        <span class="trend-rank">${i+1}</span>
+        <span class="trend-title">${n.player?`<strong>${n.player}</strong> — `:''}${(n.title||'').slice(0,45)}</span>
+      </div>`).join('');
+  }
+  // Oyuncular
+  const pt = document.getElementById('playerTagCloud');
+  if (pt && data.players) {
+    pt.innerHTML = data.players.filter(p=>p.name).map(p =>
+      `<span class="tag-chip player-tag" onclick="goToSearch('${p.name.replace(/'/,"\\'")}')">
+        ⚽ ${p.name} <span class="tag-count">${p.count}</span>
+      </span>`).join('');
+  }
+  // Kulüpler
+  const ct = document.getElementById('clubTagCloud');
+  if (ct && data.clubs) {
+    ct.innerHTML = data.clubs.filter(c=>c.name).map(c =>
+      `<span class="tag-chip" onclick="goToSearch('${c.name.replace(/'/,"\\'")}')">
+        🛡 ${c.name} <span class="tag-count">${c.count}</span>
+      </span>`).join('');
+  }
+}
+
+
+
+// ══════════════════════════════════════════════
+//  TEMA SİSTEMİ
+// ══════════════════════════════════════════════
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next    = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+}
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('sa_theme', theme);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
+}
+// Kaydedilmiş temayı uygula
+(function() {
+  const saved = localStorage.getItem('sa_theme') || 'dark';
+  applyTheme(saved);
+})();
+
+// ══════════════════════════════════════════════
+//  ŞİFRE DEĞİŞTİR / SIFIRLA
+// ══════════════════════════════════════════════
+async function changePassword() {
+  const old1 = document.getElementById('oldPassword').value;
+  const new1 = document.getElementById('newPassword').value;
+  const new2 = document.getElementById('newPassword2').value;
+  const errEl = document.getElementById('pwError');
+  errEl.style.display = 'none';
+
+  if (!old1 || !new1 || !new2) { errEl.textContent='Tüm alanları doldur'; errEl.style.display='block'; return; }
+  if (new1 !== new2) { errEl.textContent='Yeni şifreler eşleşmiyor'; errEl.style.display='block'; return; }
+  if (new1.length < 6) { errEl.textContent='Şifre en az 6 karakter olmalı'; errEl.style.display='block'; return; }
+
+  try {
+    const res  = await fetch(`${AUTH_BASE}/password`, {
+      method:'PUT', headers:{'Content-Type':'application/json','Authorization':`Bearer ${authToken}`},
+      credentials:'include', body: JSON.stringify({ oldPassword: old1, newPassword: new1 }),
+    });
+    const data = await res.json();
+    if (!data.success) { errEl.textContent=data.error; errEl.style.display='block'; return; }
+    document.getElementById('pwOk').classList.add('show');
+    ['oldPassword','newPassword','newPassword2'].forEach(id => document.getElementById(id).value = '');
+    setTimeout(() => document.getElementById('pwOk').classList.remove('show'), 3000);
+  } catch { errEl.textContent='Bağlantı hatası'; errEl.style.display='block'; }
+}
+
+function showForgotPassword() {
+  document.getElementById('formLogin').style.display   = 'none';
+  document.getElementById('formRegister').style.display = 'none';
+  document.getElementById('formForgot').style.display  = '';
+  document.getElementById('modalSub').textContent = 'Şifreni sıfırla';
+}
+
+async function doForgotPassword() {
+  const email = document.getElementById('forgotEmail').value.trim();
+  if (!email) return showAuthError('E-posta gerekli');
+  try {
+    const res  = await fetch(`${AUTH_BASE}/forgot-password`, {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!data.success) return showAuthError(data.error);
+    document.getElementById('formForgot').innerHTML = `
+      <div style="text-align:center;padding:1rem">
+        <div style="font-size:2rem;margin-bottom:.75rem">📧</div>
+        <div style="color:var(--text);font-weight:600;margin-bottom:.5rem">Sıfırlama talebi alındı!</div>
+        <div style="color:var(--text2);font-size:.85rem">Prodüksiyon ortamında e-posta gönderilir.</div>
+        ${data.token ? `<div style="margin-top:.75rem;background:var(--surface3);border-radius:6px;padding:.65rem;font-family:monospace;font-size:.8rem;color:var(--accent);word-break:break-all">Token (dev): ${data.token}</div>` : ''}
+      </div>`;
+  } catch { showAuthError('Bağlantı hatası'); }
+}
+
+// ══════════════════════════════════════════════
+//  TAKIM TAKİP SİSTEMİ
+// ══════════════════════════════════════════════
+let followData = { teams: [], players: [] };
+
+async function loadFollows() {
+  if (!currentUser || !authToken) return;
+  try {
+    const res  = await fetch(`${API_BASE}/follow`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (data.success) {
+      followData = data.data;
+      renderFollowLists();
+    }
+  } catch {}
+}
+
+function renderFollowLists() {
+  const teams   = document.getElementById('followedTeams');
+  const players = document.getElementById('followedPlayers');
+  if (!teams || !players) return;
+
+  teams.innerHTML = followData.teams.length
+    ? followData.teams.map(t => `
+        <span class="tag-chip" style="cursor:pointer" onclick="unfollowItem('team','${t.replace(/'/,"\\'")}')">
+          🛡 ${t} <span style="color:var(--accent2);margin-left:.25rem">✕</span>
+        </span>`).join('')
+    : '<span style="color:var(--text3);font-size:.8rem">Henüz takım takip etmiyorsun</span>';
+
+  players.innerHTML = followData.players.length
+    ? followData.players.map(p => `
+        <span class="tag-chip player-tag" style="cursor:pointer" onclick="unfollowItem('player','${p.replace(/'/,"\\'")}')">
+          ⚽ ${p} <span style="color:var(--accent2);margin-left:.25rem">✕</span>
+        </span>`).join('')
+    : '<span style="color:var(--text3);font-size:.8rem">Henüz oyuncu takip etmiyorsun</span>';
+}
+
+async function followItem(type, name) {
+  if (!currentUser) return openModal('login');
+  try {
+    const res  = await fetch(`${API_BASE}/follow`, {
+      method:'POST', headers:{'Content-Type':'application/json','Authorization':`Bearer ${authToken}`},
+      credentials:'include', body: JSON.stringify({ type, name }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      followData[type === 'player' ? 'players' : 'teams'] = data.list;
+      renderFollowLists();
+      // Mini toast
+      showToast(data.following ? `✅ ${name} takibe alındı` : `❌ ${name} takipten çıkarıldı`);
+    }
+  } catch {}
+}
+
+function unfollowItem(type, name) { followItem(type, name); }
+
+function showToast(msg, duration = 2500) {
+  const existing = document.getElementById('miniToast');
+  if (existing) existing.remove();
+  const div = document.createElement('div');
+  div.id = 'miniToast';
+  div.style.cssText = `position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);
+    background:var(--surface2);border:1px solid var(--border);color:var(--text);
+    padding:.55rem 1.25rem;border-radius:8px;font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;font-size:.85rem;z-index:700;box-shadow:0 8px 30px rgba(0,0,0,.4);
+    animation:slideUp .3s ease both`;
+  div.textContent = msg;
+  document.body.appendChild(div);
+  setTimeout(() => div.remove(), duration);
+}
+
+// Takip akışını yükle
+async function loadFollowFeed() {
+  const container = document.getElementById('followFeedCards');
+  if (!container) return;
+  if (!currentUser) {
+    container.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">🔒</span><div class="empty-text">Takip akışı için giriş yapmalısın</div></div>';
+    return;
+  }
+  container.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
+  try {
+    const res  = await fetch(`${API_BASE}/follow/feed`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }, credentials: 'include',
+    });
+    const data = await res.json();
+    if (!data.data?.length) {
+      container.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">📭</span><div class="empty-text">Takip akışın boş — takım veya oyuncu takip et!</div></div>';
+      return;
+    }
+    container.innerHTML = data.data.map((n,i) => buildCard(n, i*0.05)).join('');
+  } catch {
+    container.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">⚠️</span><div class="empty-text">Akış yüklenemedi</div></div>';
+  }
+}
+
+// ══════════════════════════════════════════════
+//  KULLANICI GEÇMİŞİ
+// ══════════════════════════════════════════════
+async function loadUserHistory() {
+  if (!currentUser) return;
+  const container = document.getElementById('userCommentHistory');
+  if (!container) return;
+  try {
+    const res  = await fetch(`${API_BASE}/users/${currentUser.id}/history`);
+    const data = await res.json();
+    if (!data.success || !data.data.recentComments?.length) {
+      container.innerHTML = '<div style="color:var(--text3);font-size:.82rem">Henüz yorum yapılmadı</div>';
+      return;
+    }
+    container.innerHTML = data.data.recentComments.slice(0,5).map(c => `
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;
+        padding:.75rem 1rem;font-size:.82rem">
+        <div style="color:var(--text2);line-height:1.5;margin-bottom:.3rem">${c.text.slice(0,100)}${c.text.length>100?'...':''}</div>
+        <div style="color:var(--text3);font-size:.7rem">${relTime(c.date)}</div>
+      </div>`).join('');
+  } catch {}
+}
+
+// ══════════════════════════════════════════════
+//  HABER KARTINA TAKİP / BEĞEN BUTONLARI EKLE
+// ══════════════════════════════════════════════
+// buildCard fonksiyonunu override et — follow butonu ekle
+const _origBuildCard = buildCard;
+window.buildCard = function(item, delay=0) {
+  let html = _origBuildCard(item, delay);
+  // tc-foot içine follow butonu ekle
+  if (item.player || (item.clubs && item.clubs[0])) {
+    const followTarget = item.player || item.clubs[0];
+    const followType   = item.player ? 'player' : 'team';
+    const isFollowing  = followType === 'player'
+      ? followData.players.includes(followTarget)
+      : followData.teams.includes(followTarget);
+    const followBtn = `<button class="ci-btn" style="margin-left:auto" onclick="event.stopPropagation();followItem('${followType}','${followTarget.replace(/'/,"\\'")}')">
+      ${isFollowing ? '★ Takipte' : '☆ Takip Et'}
+    </button>`;
+    html = html.replace('</div>\n    </div>', `${followBtn}</div>\n    </div>`);
+  }
+  return html;
+};
+
+
+// ══════════════════════════════════════════════
+//  SEO — Dinamik Meta & Structured Data
+// ══════════════════════════════════════════════
+const SITE_URL  = window.location.origin;
+const SITE_NAME = 'GoalTransfer';
+
+function updateMetaTags(title, desc, imageUrl, type='website') {
+  document.title = title + ' — ' + SITE_NAME;
+  const set = (sel, attr, val) => { const el=document.querySelector(sel); if(el) el.setAttribute(attr,val); };
+  const setOG = (prop,val) => { let el=document.querySelector(`meta[property="${prop}"]`); if(!el){el=document.createElement('meta');el.setAttribute('property',prop);document.head.appendChild(el);} el.setAttribute('content',val); };
+  const setTW = (name,val) => { let el=document.querySelector(`meta[name="${name}"]`); if(!el){el=document.createElement('meta');el.setAttribute('name',name);document.head.appendChild(el);} el.setAttribute('content',val); };
+  set('meta[name="description"]','content',desc);
+  setOG('og:title', title);
+  setOG('og:description', desc);
+  setOG('og:type', type);
+  setOG('og:url', window.location.href);
+  if(imageUrl) { setOG('og:image', imageUrl); setTW('twitter:image', imageUrl); }
+  setTW('twitter:title', title);
+  setTW('twitter:description', desc);
+  // Canonical
+  let can = document.querySelector('link[rel="canonical"]');
+  if(!can) { can=document.createElement('link'); can.rel='canonical'; document.head.appendChild(can); }
+  can.href = window.location.href;
+}
+
+function injectArticleSchema(item) {
+  const existing = document.getElementById('article-schema');
+  if(existing) existing.remove();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": item.title,
+    "description": item.summary || item.title,
+    "datePublished": item.date,
+    "dateModified": item.date,
+    "author": { "@type": "Organization", "name": SITE_NAME },
+    "publisher": {
+      "@type": "Organization",
+      "name": SITE_NAME,
+      "logo": { "@type": "ImageObject", "url": SITE_URL + "/icon-512.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": SITE_URL },
+    "keywords": (item.tags||[]).join(', '),
+    "articleSection": item.type === 'transfer' ? 'Transfer Haberleri' : 'Spor Haberleri',
+    "inLanguage": item.lang || currentLang || 'tr'
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.id   = 'article-schema';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+}
+
+function injectFAQSchema(faqs) {
+  // faqs: [{q,a}]
+  const existing = document.getElementById('faq-schema');
+  if(existing) existing.remove();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(({q,a}) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": { "@type": "Answer", "text": a }
+    }))
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.id   = 'faq-schema';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+}
+
+function injectBreadcrumb(items) {
+  // items: [{name, url}]
+  const existing = document.getElementById('breadcrumb-schema');
+  if(existing) existing.remove();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map(({name,url},i) => ({
+      "@type": "ListItem",
+      "position": i+1,
+      "name": name,
+      "item": SITE_URL + url
+    }))
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.id   = 'breadcrumb-schema';
+  s.textContent = JSON.stringify(schema);
+  document.head.appendChild(s);
+}
+
+// Sayfa değişince meta güncelle
+const _pageMetaMap = {
+  home      : () => { updateMetaTags('Son Dakika Transfer & Spor Haberleri','AI destekli spor forumu. Son dakika transfer haberleri, gündem tartışmaları.'); injectBreadcrumb([{name:'Ana Sayfa',url:'/'}]); },
+  transfers : () => { updateMetaTags('Transfer Haberleri','Güncel transfer haberleri, resmi transferler ve iddialar.','',); injectBreadcrumb([{name:'Ana Sayfa',url:'/'},{name:'Transferler',url:'/?page=transfers'}]); injectFAQSchema([{q:'En son transfer haberleri neler?',a:'GoalTransfer\'da anlık güncellenen transfer haberleri takip edebilirsiniz.'},{q:'Transfer dönemleri ne zaman?',a:'Kış transfer dönemi Ocak, yaz transfer dönemi Haziran-Eylül arası gerçekleşir.'}]); },
+  forum     : () => { updateMetaTags('Spor Forumu — Tartış ve Paylaş','Futbol, transfer ve spor gündemine dair tartışmalar.'); injectBreadcrumb([{name:'Ana Sayfa',url:'/'},{name:'Forum',url:'/?page=forum'}]); },
+  news      : () => { updateMetaTags('Spor Haberleri','Son dakika spor haberleri — futbol, basketbol ve daha fazlası.'); injectBreadcrumb([{name:'Ana Sayfa',url:'/'},{name:'Haberler',url:'/?page=news'}]); },
+  search    : () => { updateMetaTags('Arama — '+SITE_NAME,'Oyuncu, kulüp ve haber ara.'); },
+  profile   : () => { updateMetaTags('Profilim — '+SITE_NAME, 'Hesap ayarları ve aktivite geçmişi.'); },
+};
+
+// showPage hook
+const __origSEOShowPage = window.showPage;
+window.showPage = function(name) {
+  __origSEOShowPage(name);
+  if(_pageMetaMap[name]) _pageMetaMap[name]();
+  // URL hash güncelle (SPA SEO için)
+  const slug = name === 'home' ? '' : name;
+  history.pushState({page:name}, '', slug ? '/?p='+slug : '/');
+};
+
+// URL parametresinden sayfa aç
+window.addEventListener('DOMContentLoaded', () => {
+  const p = new URLSearchParams(window.location.search).get('p');
+  if(p && ['transfers','forum','news','search'].includes(p)) showPage(p);
+  // Lang param
+  const lg = new URLSearchParams(window.location.search).get('lang');
+  if(lg) setLang(lg);
+  // Search param
+  const sq = new URLSearchParams(window.location.search).get('search');
+  if(sq) { showPage('search'); document.getElementById('searchPageInput').value=sq; searchQuery=sq; runSearch(); }
+});
+
+// ── Service Worker kaydet (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(r => console.log('✅ SW registered'))
+      .catch(e => console.log('SW error:', e));
+  });
+}
+
+// Premium CTA'yı giriş durumuna göre göster/gizle
+function updatePremiumCTA() {
+  const cta = document.getElementById('premiumCta');
+  if(cta) cta.style.display = currentUser ? 'none' : 'flex';
+}
+// setUser hook'una bağla
+const _origSetUser = setUser;
+window.setUser = function(user) { _origSetUser(user); updatePremiumCTA(); };
+
+
+// ══════════════════════════════════════════════
+//  TAKIM FORUM SİSTEMİ — Frontend
+// ══════════════════════════════════════════════
+let forumStructure    = null;   // Sunucudan gelen yapı
+let activeLeague      = 'genel';
+let activeTeamId      = null;
+let activeTopicForm   = false;
+
+// Forum yapısını sunucudan çek
+async function loadForumStructure() {
+  try {
+    if (isConnected) {
+      const res  = await fetch(`${API_BASE}/forum/categories`);
+      const data = await res.json();
+      if (data.success) forumStructure = data.data;
+    } else {
+      // Offline fallback — temel yapı
+      forumStructure = {
+        superlig: { label:'Süper Lig', emoji:'🇹🇷', teams:[
+          {id:'galatasaray',label:'Galatasaray',emoji:'🦁',color:'#f5c518'},
+          {id:'fenerbahce', label:'Fenerbahçe', emoji:'🦅',color:'#003399'},
+          {id:'besiktas',   label:'Beşiktaş',   emoji:'⚫',color:'#1a1a1a'},
+          {id:'trabzonspor',label:'Trabzonspor', emoji:'⚡',color:'#8b0000'},
+        ]},
+        premier: { label:'Premier Lig', emoji:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', teams:[
+          {id:'manchester-city',  label:'Man City',  emoji:'🔵',color:'#6cabdd'},
+          {id:'arsenal',          label:'Arsenal',   emoji:'🔴',color:'#ef0107'},
+          {id:'liverpool',        label:'Liverpool', emoji:'❤️',color:'#c8102e'},
+          {id:'chelsea',          label:'Chelsea',   emoji:'🔵',color:'#034694'},
+          {id:'manchester-united',label:'Man Utd',   emoji:'🔴',color:'#da020d'},
+        ]},
+        laliga:     { label:'La Liga',    emoji:'🇪🇸', teams:[{id:'real-madrid',label:'Real Madrid',emoji:'⚪',color:'#febe10'},{id:'barcelona',label:'Barcelona',emoji:'🔵',color:'#a50044'},{id:'atletico',label:'Atlético',emoji:'🔴',color:'#cb3524'}] },
+        bundesliga: { label:'Bundesliga', emoji:'🇩🇪', teams:[{id:'bayern',label:'Bayern',emoji:'🔴',color:'#dc052d'},{id:'dortmund',label:'Dortmund',emoji:'🟡',color:'#fde100'}] },
+        seriea:     { label:'Serie A',    emoji:'🇮🇹', teams:[{id:'inter',label:'Inter',emoji:'🔵',color:'#0068a8'},{id:'juventus',label:'Juventus',emoji:'⚫',color:'#000000'},{id:'milan',label:'AC Milan',emoji:'🔴',color:'#fb090b'}] },
+        turnuvalar: { label:'Turnuvalar', emoji:'🏆', subcategories:[
+          {id:'sampiyonlar-ligi',label:'Şampiyonlar Ligi',emoji:'⭐'},
+          {id:'avrupa-ligi',     label:'Avrupa Ligi',      emoji:'🟠'},
+          {id:'dunya-kupasi',    label:'Dünya Kupası',     emoji:'🌍'},
+        ]},
+      };
+    }
+  } catch { /* sessiz hata */ }
+}
+
+// Sekme geçişi
+function switchForumSection(btn, league) {
+  // Sekme butonları
+  document.querySelectorAll('.forum-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Panelleri gizle
+  document.querySelectorAll('.forum-section-panel').forEach(p => p.style.display = 'none');
+  document.getElementById('teamTopicsArea').style.display = 'none';
+
+  activeLeague   = league;
+  activeTeamId   = null;
+
+  // İlgili paneli göster
+  const panel = document.getElementById(`forum-section-${league}`);
+  if (panel) {
+    panel.style.display = 'block';
+    // Panel boşsa render et
+    if (!panel.dataset.rendered) {
+      renderLeaguePanel(league, panel);
+      panel.dataset.rendered = '1';
+    }
+  }
+
+  // Yeni konu formunu kapat
+  closeNewTopicForm();
+  // New topic cat info güncelle
+  updateNewTopicCatInfo();
+}
+
+// Lig panelini oluştur (takım kartları)
+function renderLeaguePanel(leagueId, container) {
+  if (leagueId === 'genel') return; // Genel zaten statik HTML
+
+  const league = forumStructure?.[leagueId];
+  if (!league) { container.innerHTML = '<div class="empty-state"><span class="empty-icon">⚽</span><div class="empty-text">Yükleniyor...</div></div>'; return; }
+
+  // Turnuvalar → alt kategori listesi
+  if (league.subcategories) {
+    container.innerHTML = `
+      <div class="topic-list-header">
+        <div class="topic-list-title"><span>${league.emoji}</span> ${league.label.toUpperCase()}</div>
+      </div>
+      <div class="league-grid">
+        ${league.subcategories.map(s => `
+          <div class="league-card" onclick="loadCategoryTopics('${s.id}','${s.label}','${leagueId}')">
+            <span class="lc-emoji">${s.emoji}</span>
+            <div class="lc-name">${s.label}</div>
+          </div>`).join('')}
+      </div>`;
+    return;
+  }
+
+  // Takım listesi
+  if (!league.teams?.length) return;
+  container.innerHTML = `
+    <div class="topic-list-header" style="margin-bottom:1rem">
+      <div class="topic-list-title"><span>${league.emoji}</span> ${league.label.toUpperCase()} TAKIMLARI</div>
+    </div>
+    <div class="team-grid">
+      ${league.teams.map(t => `
+        <div class="team-card" id="tc-${t.id}"
+          style="border-color:${t.color}22"
+          onclick="selectTeam('${t.id}','${t.label}','${t.emoji}','${t.color}','${leagueId}')">
+          <span class="tc-emoji">${t.emoji}</span>
+          <div class="tc-name">${t.label}</div>
+          ${t.city ? `<div class="tc-city">${t.city}</div>` : ''}
+        </div>`).join('')}
+    </div>`;
+}
+
+// Takım seçildi → konuları yükle
+async function selectTeam(teamId, teamName, teamEmoji, teamColor, leagueId) {
+  activeTeamId = teamId;
+
+  // Kart vurgu
+  document.querySelectorAll('.team-card').forEach(c => {
+    c.classList.remove('active');
+    c.style.borderWidth = '1px';
+  });
+  const card = document.getElementById(`tc-${teamId}`);
+  if (card) { card.classList.add('active'); card.style.borderColor = teamColor; card.style.borderWidth = '2px'; }
+
+  await loadCategoryTopics(teamId, teamName, leagueId, teamEmoji, teamColor);
+  updateNewTopicCatInfo(teamName, teamEmoji);
+}
+
+// Kategori/takım konularını yükle
+async function loadCategoryTopics(catId, catName, leagueId='genel', emoji='💬', color='var(--accent)') {
+  const area  = document.getElementById('teamTopicsArea');
+  const crumb = document.getElementById('teamBreadcrumb');
+  const title = document.getElementById('teamTopicsTitle');
+  const list  = document.getElementById('teamTopicsList');
+
+  area.style.display  = 'block';
+  list.innerHTML = '<div class="skeleton" style="height:64px"></div><div class="skeleton" style="height:64px"></div>';
+
+  const league = forumStructure?.[leagueId];
+  crumb.innerHTML = `
+    <span>${league?.emoji || '💬'}</span>
+    <span class="cb-sep">/</span>
+    <span>${league?.label || 'Genel'}</span>
+    <span class="cb-sep">/</span>
+    <span class="cb-active">${emoji} ${catName}</span>`;
+
+  title.innerHTML = `<span style="color:${color}">${emoji}</span> ${catName.toUpperCase()} KONULARI`;
+
+  // Konuları çek
+  try {
+    let topics = [];
+    if (isConnected) {
+      const res  = await fetch(`${API_BASE}/forum/topics/${catId}`);
+      const data = await res.json();
+      topics = data.data || [];
+    } else {
+      // Offline: tüm konuları göster
+      topics = allTopics;
+    }
+
+    if (!topics.length) {
+      list.innerHTML = `
+        <div class="empty-state">
+          <span class="empty-icon">${emoji}</span>
+          <div class="empty-text">Henüz konu yok</div>
+          <div style="margin-top:.75rem">
+            <button class="open-topic-btn" onclick="toggleNewTopicForm()">+ İlk Konuyu Sen Aç</button>
+          </div>
+        </div>`;
+      return;
+    }
+    list.innerHTML = topics.map((t,i) => buildThread(t, i*0.05)).join('');
+  } catch {
+    list.innerHTML = '<div class="empty-state"><span class="empty-icon">⚠️</span><div class="empty-text">Konular yüklenemedi</div></div>';
+  }
+}
+
+// Yeni konu formu
+function toggleNewTopicForm() {
+  const form = document.getElementById('newTopicForm');
+  activeTopicForm = !activeTopicForm;
+  form.classList.toggle('open', activeTopicForm);
+  if (activeTopicForm) {
+    if (!currentUser) { closeNewTopicForm(); openModal('login'); return; }
+    document.getElementById('newTopicTitle').focus();
+    updateNewTopicCatInfo();
+  }
+}
+
+function closeNewTopicForm() {
+  activeTopicForm = false;
+  document.getElementById('newTopicForm').classList.remove('open');
+}
+
+function updateNewTopicCatInfo(teamName='', emoji='') {
+  const el = document.getElementById('newTopicCatInfo');
+  if (!el) return;
+  const league = forumStructure?.[activeLeague];
+  const where  = teamName
+    ? `${emoji} ${teamName} (${league?.label || activeLeague})`
+    : `💬 ${league?.label || 'Genel'}`;
+  el.textContent = `Kategori: ${where}`;
+}
+
+async function submitNewTopic() {
+  if (!currentUser) return openModal('login');
+  const title   = document.getElementById('newTopicTitle').value.trim();
+  const content = document.getElementById('newTopicContent').value.trim();
+  const status  = document.getElementById('newTopicStatus');
+
+  if (!title || title.length < 5) { status.textContent = '⚠️ Başlık en az 5 karakter olmalı'; return; }
+  status.textContent = '⏳ Konu açılıyor...';
+
+  try {
+    const res  = await fetch(`${API_BASE}/forum/topics`, {
+      method  : 'POST',
+      headers : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      credentials: 'include',
+      body    : JSON.stringify({
+        title,
+        content,
+        categoryId: activeTeamId || activeLeague,
+        teamId    : activeTeamId || activeLeague,
+      }),
+    });
+    const data = await res.json();
+    if (!data.success) { status.textContent = '❌ ' + data.error; return; }
+
+    status.textContent = '✅ Konu açıldı!';
+    document.getElementById('newTopicTitle').value   = '';
+    document.getElementById('newTopicContent').value = '';
+    setTimeout(() => { closeNewTopicForm(); status.textContent = ''; }, 1200);
+
+    // Konuyu listeye ekle
+    if (activeTeamId) {
+      const list = document.getElementById('teamTopicsList');
+      const empty = list.querySelector('.empty-state');
+      if (empty) empty.remove();
+      list.insertAdjacentHTML('afterbegin', buildThread(data.data));
+    }
+    allTopics.unshift(data.data);
+    renderHomeThreads();
+  } catch { status.textContent = '❌ Bağlantı hatası'; }
+}
+
+// Forum sayfası açılınca
+async function initForumPage() {
+  if (!forumStructure) await loadForumStructure();
+  renderForumPage(allTopics);
+  updateNewTopicCatInfo();
+}
+
+// ── BAŞLAT
+checkSession();
+fetchData();
+setInterval(fetchData, 3 * 60 * 1000);
+// Socket.io bağlan
+setTimeout(connectSocket, 1000);
+// Trending verileri yükle
+setTimeout(loadTrending, 1500);
+// Forum yapısını önceden yükle
+setTimeout(loadForumStructure, 2000);
+// Tema
+(function(){ const t=localStorage.getItem('sa_theme')||'dark'; applyTheme(t); })();
+// Dil tespiti
+detectGeoLang();
+// Kayıtlı dil varsa hemen uygula
+if (localStorage.getItem('sa_lang')) applyLang(localStorage.getItem('sa_lang'));
+
+</script>
+<script>
+// Socket.io'yu dinamik yükle
+(function(){
+  const base = window.location.hostname === 'localhost' ? 'http://localhost:3000' : window.location.origin;
+  const s = document.createElement('script');
+  s.src = base + '/socket.io/socket.io.js';
+  s.onerror = () => console.log('Socket.io yüklenemedi');
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

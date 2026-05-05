@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: goaltransfer
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/stats
+
+    # Disk volume — veriler burada saklanır (ücretsiz: 1GB)
+    disk:
+      name: goaltransfer-data
+      mountPath: /var/data
+      sizeGB: 1
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SITE_DOMAIN
+        value: https://goaltransfers.com
+      - key: DATA_DIR
+        value: /var/data
+      - key: PORT
+        value: 3000
+
+      # Aşağıdakileri Render Dashboard'dan manuel gir:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # Dashboard'dan gir
+      - key: JWT_SECRET
+        sync: false          # Dashboard'dan gir (güçlü random string)
+      - key: ADMIN_EMAILS
+        sync: false          # Dashboard'dan gir
+
+      # İsteğe bağlı — Google OAuth
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_CALLBACK_URL
+        sync: false          # https://goaltransfer.onrender.com/auth/google/callback
