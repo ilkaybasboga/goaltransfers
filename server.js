@@ -287,7 +287,6 @@ app.get('/api/users/:userId/history', auth.optionalAuth, (req, res) => {
 // ══════════════════════════════════════════════
 //  TAKIM TAKİP SİSTEMİ
 // ══════════════════════════════════════════════
-const FOLLOW_FILE = path.join(DATA_DIR, 'follows.json');
 
 function loadFollows() {
   try {
@@ -617,6 +616,8 @@ const CONFIG = {
   maxItemsPerFeed  : 8,
   dataFile         : path.join(DATA_DIR, 'news.json'),
 };
+const FOLLOW_FILE = path.join(DATA_DIR, 'follows.json');
+
 
 // ── Dil koduna göre RSS kaynakları
 const RSS_BY_LANG = {
