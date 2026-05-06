@@ -623,33 +623,26 @@ const FOLLOW_FILE = path.join(DATA_DIR, 'follows.json');
 // ── Dil koduna göre RSS kaynakları
 const RSS_BY_LANG = {
   tr: [
-    { url: 'https://www.goal.com/feeds/tr/news',                      source: 'Goal TR',     lang: 'tr' },
-    { url: 'https://www.fanatik.com.tr/rss/anasayfa.xml',             source: 'Fanatik',     lang: 'tr' },
-    { url: 'https://www.sporx.com/rss/',                              source: 'Sporx',       lang: 'tr' },
-    { url: 'https://www.ntvspor.net/rss',                             source: 'NTV Spor',    lang: 'tr' },
-    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml',         source: 'BBC Sport',   lang: 'en' },
+    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', source: 'BBC Sport', lang: 'en' },
+    { url: 'https://www.skysports.com/rss/12040', source: 'Sky Sports', lang: 'en' },
+    { url: 'https://www.espn.com/espn/rss/soccer/news', source: 'ESPN Soccer', lang: 'en' },
   ],
   es: [
-    { url: 'https://e00-marca.uecdn.es/rss/futbol.xml',               source: 'Marca',       lang: 'es' },
-    { url: 'https://www.mundodeportivo.com/rss/futbol.xml',           source: 'Mundo Dep.',  lang: 'es' },
-    { url: 'https://www.goal.com/feeds/es/news',                      source: 'Goal ES',     lang: 'es' },
-    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml',         source: 'BBC Sport',   lang: 'en' },
+    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', source: 'BBC Sport', lang: 'en' },
+    { url: 'https://www.skysports.com/rss/12040', source: 'Sky Sports', lang: 'en' },
   ],
   zh: [
-    { url: 'https://www.goal.com/feeds/zh/news',                      source: 'Goal ZH',     lang: 'zh' },
-    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml',         source: 'BBC Sport',   lang: 'en' },
-    { url: 'https://www.goal.com/feeds/en/news',                      source: 'Goal EN',     lang: 'en' },
+    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', source: 'BBC Sport', lang: 'en' },
+    { url: 'https://www.skysports.com/rss/12040', source: 'Sky Sports', lang: 'en' },
   ],
   ar: [
-    { url: 'https://www.goal.com/feeds/ar/news',                      source: 'Goal AR',     lang: 'ar' },
-    { url: 'https://feeds.bbci.co.uk/sport/arabic/rss.xml',           source: 'BBC Arabic',  lang: 'ar' },
-    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml',         source: 'BBC Sport',   lang: 'en' },
+    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', source: 'BBC Sport', lang: 'en' },
+    { url: 'https://www.skysports.com/rss/12040', source: 'Sky Sports', lang: 'en' },
   ],
   en: [
-    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml',         source: 'BBC Sport',   lang: 'en' },
-    { url: 'https://www.goal.com/feeds/en/news',                      source: 'Goal EN',     lang: 'en' },
-    { url: 'https://www.skysports.com/rss/12040',                     source: 'Sky Sports',  lang: 'en' },
-    { url: 'https://www.espn.com/espn/rss/soccer/news',               source: 'ESPN Soccer', lang: 'en' },
+    { url: 'https://feeds.bbci.co.uk/sport/football/rss.xml', source: 'BBC Sport', lang: 'en' },
+    { url: 'https://www.skysports.com/rss/12040', source: 'Sky Sports', lang: 'en' },
+    { url: 'https://www.espn.com/espn/rss/soccer/news', source: 'ESPN Soccer', lang: 'en' },
   ],
 };
 const SUPPORTED_LANGS = ['tr','es','zh','ar','en'];
