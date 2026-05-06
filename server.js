@@ -35,6 +35,7 @@ const claude = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const parser = new Parser({ timeout: 10000, headers: { 'User-Agent': 'GoalTransfer/3.0' } });
 
 app.use(cors({ origin: true, credentials: true }));
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(cookieParser());
 // ── Güvenlik başlıkları
