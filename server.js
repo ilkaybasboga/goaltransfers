@@ -682,7 +682,24 @@ const LANG_PROMPTS = {
   ar: 'اكتب العنوان والملخص باللغة العربية.',
   en: 'Write title and summary in ENGLISH.',
 };
-
+function analyzeSimple(r, src, lang) {
+  const t = r.toLowerCase();
+  const isT = /transfer|sign|move|deal|fee|million|loan/i.test(t);
+  const isI = /injur|hurt|surgery/i.test(t);
+  const isM = /match|goal|score|win|lose/i.test(t);
+  const type = isT ? 'transfer' : isI ? 'injury' : isM ? 'match' : 'general';
+  return {
+    title: r.slice(0, 80).split('\n')[0].trim(),
+    summary: r.slice(0, 200),
+    type,
+    importance: /million|confirmed|official/i.test(t) ? 'high' : 'medium',
+    clubs: [], player: null, fee: null,
+    from_club: null, to_club: null,
+    transfer_status: isT ? 'rumor' : null,
+    forum_title: r.slice(0, 60),
+    tags: [type], lang,
+  };
+}
 async function analyzeWithClaude(rawText, source, lang = 'en') {
   if (!process.env.ANTHROPIC_API_KEY) return analyzeSimple(rawText, source, lang);
   try {
