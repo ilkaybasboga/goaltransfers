@@ -727,7 +727,32 @@ async function processFeedItem(item, src, lang = 'en') {
     return n;
   } catch { return null; }
 }
-
+// NewsAPI ile haber çek
+async function fetchFromNewsAPI() {
+  if (!process.env.NEWS_API_KEY) return [];
+  try {
+    const url = `https://newsapi.org/v2/everything?q=football+transfer&language=en&sortBy=publishedAt&pageSize=20&apiKey=${process.env.NEWS_API_KEY}`;
+    const res  = await fetch(url);
+    const data = await res.json();
+    if (!data.articles) return [];
+    const results = [];
+    for (const a of data.articles) {
+      const raw = (a.title || '') + ' ' + (a.description || '');
+      const analyzed = analyzeSimple(raw, a.source?.name || 'NewsAPI', 'en');
+      results.push({
+        id      : Date.now().toString(36) + Math.random().toString(36).slice(2),
+        ...analyzed,
+        source  : a.source?.name || 'NewsAPI',
+        link    : a.url || null,
+        date    : a.publishedAt || new Date().toISOString(),
+        likes   : 0, comments: 0,
+        views   : Math.floor(Math.random() * 500) + 50,
+      });
+      await new Promise(r => setTimeout(r, 100));
+    }
+    return results;
+  } catch(e) { console.error('NewsAPI hatası:', e.message); return []; }
+}
 // Tüm diller için RSS çek
 async function fetchAndProcess(targetLang = null) {
   const stamp = new Date().toLocaleTimeString('tr-TR');
@@ -747,7 +772,9 @@ async function fetchAndProcess(targetLang = null) {
         }
       } catch (e) { console.error(`❌ ${feed.source} [${lang}]:`, e.message); }
     }
-  }
+  }// NewsAPI'den haber çek
+  const apiNews = await fetchFromNewsAPI();
+  apiNews.forEach(n => { if(!seen.has(n.id)) { newsCache.unshift(n); added++; seen.add(n.id); } });
   newsCache = newsCache.slice(0, CONFIG.maxCachedNews);
   if (added > 0) { saveData(); console.log(`✅ +${added} haber`); }
 }
