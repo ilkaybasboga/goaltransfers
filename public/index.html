@@ -1675,6 +1675,7 @@ function showPage(name) {
   if (name === 'transfers') renderTransferPage(allTransfers);
   if (name === 'forum')     renderForumPage(allTopics);
   if (name === 'news')      renderNewsPage(allNews.filter(n => n.type !== 'transfer'));
+  if (name === 'forum') { initForumPage(); loadForumStructure(); }
 }
 
 // ── API'den veri çek
