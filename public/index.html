@@ -2226,7 +2226,7 @@ let socket = null;
 
 function connectSocket() {
   if (typeof io === 'undefined') return;
-  socket = io('http://localhost:3000', { transports: ['websocket','polling'] });
+  socket = io(window.location.origin, { transports: ['websocket','polling'] });
 
   socket.on('connect', () => {
     if (currentUser) socket.emit('register', currentUser.id);
