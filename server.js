@@ -744,6 +744,37 @@ async function processFeedItem(item, src, lang = 'en') {
     return n;
   } catch { return null; }
 }
+// GNews API — Türkçe haber çek
+async function fetchFromGNews() {
+  if (!process.env.GNEWS_API_KEY) return [];
+  try {
+    const queries = ['futbol transfer', 'süper lig', 'galatasaray fenerbahçe beşiktaş'];
+    const results = [];
+    for (const q of queries) {
+      const url = `https://gnews.io/api/v4/search?q=${encodeURIComponent(q)}&lang=tr&country=tr&max=10&apikey=${process.env.GNEWS_API_KEY}`;
+      const res  = await fetch(url);
+      const data = await res.json();
+      if (!data.articles) continue;
+      for (const a of data.articles) {
+        const raw = (a.title || '') + ' ' + (a.description || '');
+        const analyzed = analyzeSimple(raw, a.source?.name || 'GNews', 'tr');
+        results.push({
+          id    : Date.now().toString(36) + Math.random().toString(36).slice(2),
+          ...analyzed,
+          source: a.source?.name || 'GNews TR',
+          link  : a.url || null,
+          date  : a.publishedAt || new Date().toISOString(),
+          likes : 0, comments: 0,
+          views : Math.floor(Math.random() * 500) + 50,
+          lang  : 'tr',
+        });
+      }
+      await new Promise(r => setTimeout(r, 500));
+    }
+    return results;
+  } catch(e) { console.error('GNews hatası:', e.message); return []; }
+}
+
 // NewsAPI ile haber çek
 async function fetchFromNewsAPI() {
   if (!process.env.NEWS_API_KEY) return [];
@@ -757,13 +788,13 @@ async function fetchFromNewsAPI() {
       const raw = (a.title || '') + ' ' + (a.description || '');
       const analyzed = analyzeSimple(raw, a.source?.name || 'NewsAPI', 'en');
       results.push({
-        id      : Date.now().toString(36) + Math.random().toString(36).slice(2),
+        id    : Date.now().toString(36) + Math.random().toString(36).slice(2),
         ...analyzed,
-        source  : a.source?.name || 'NewsAPI',
-        link    : a.url || null,
-        date    : a.publishedAt || new Date().toISOString(),
-        likes   : 0, comments: 0,
-        views   : Math.floor(Math.random() * 500) + 50,
+        source: a.source?.name || 'NewsAPI',
+        link  : a.url || null,
+        date  : a.publishedAt || new Date().toISOString(),
+        likes : 0, comments: 0,
+        views : Math.floor(Math.random() * 500) + 50,
       });
       await new Promise(r => setTimeout(r, 100));
     }
@@ -791,6 +822,8 @@ async function fetchAndProcess(targetLang = null) {
     }
   }// NewsAPI'den haber çek
   const apiNews = await fetchFromNewsAPI();
+  const gnewsNews = await fetchFromGNews();
+gnewsNews.forEach(n => { if(!seen.has(n.id)) { newsCache.unshift(n); added++; seen.add(n.id); } });
   apiNews.forEach(n => { if(!seen.has(n.id)) { newsCache.unshift(n); added++; seen.add(n.id); } });
   newsCache = newsCache.slice(0, CONFIG.maxCachedNews);
   if (added > 0) { saveData(); console.log(`✅ +${added} haber`); }
