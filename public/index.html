@@ -1770,7 +1770,7 @@ function buildCard(item, delay=0) {
        </div>` : '';
 
 return `
-    <div class="t-card fade-in" style="animation-delay:${delay}s" onclick="openTopic('${item.id}_t','${(item.forum_title||item.title||'').replace(/'/g,"\\'")}',item)">
+    <div class="t-card fade-in" style="animation-delay:${delay}s" onclick="openTopic('${item.id}_t','${(item.forum_title||item.title||'').replace(/'/g,"\\'")}',allNews.find(n=>n.id==='${item.id}')||allTransfers.find(n=>n.id==='${item.id}'))">
       <div class="tc-bar ${typeBar(item.type)}"></div>
       <div class="tc-badges">
         <span class="badge ${tbClass}">${tbLabel}</span>
